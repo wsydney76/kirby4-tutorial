@@ -1,0 +1,35 @@
+{
+    "name": "wearejust/kirby-twig",
+    "description": "Twig templating support for Kirby CMS",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cees van Egmond",
+            "email": "cees.vanegmond@wearejust.com"
+        },
+        {
+            "name": "Sietse Veenman",
+            "email": "sietse.veenman@wearejust.com"
+        },
+        {
+            "name": "Duncan Pronk",
+            "email": "duncan.pronk@wearejust.com"
+        }
+    ],
+    "require": {
+        "getkirby/composer-installer": "^1.1",
+        "twig/twig": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Wearejust\\Kirby\\Twig\\": "src/classes/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{% extends "layouts/main.twig" %}
+
+{% block content %}
+    <h1 class="text-4xl font-bold">{{ page.title }}</h1>
+
+    <div class="prose prose-lg min-w-full mt-8">
+        {{ page.text|raw }}
+    </div>
+{% endblock %}
+

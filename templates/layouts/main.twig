@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" class="bg-slate-50 text-slate-800" style="overflow-y: scroll">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <title> {{ site.title }} | {{ page.title }}</title>
+
+    {{ css([
+        'assets/css/styles.css',
+    ]) }}
+
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url('favicon.ico') }}">
+</head>
+<body class="mx-auto max-w-screen-lg px-6 py-12">
+
+{#{% include '@templates/layouts/header.twig' %}#}
+
+<main class="main">
+
+    {% block content %}
+
+    {% endblock %}
+
+
+</main>
+
+{#{% include '@templates/layouts/footer.twig' %}#}
+
+
+</body>
+</html>
