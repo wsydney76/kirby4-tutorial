@@ -34,6 +34,9 @@
     "optimize-autoloader": true
   },
   "scripts": {
+    "post-install-cmd": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
     "start": [
       "Composer\\Config::disableProcessTimeout",
       "@php -S localhost:8000 kirby/router.php"
