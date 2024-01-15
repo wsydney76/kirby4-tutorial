@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ -z $1 ]
+then
+    echo Project name missing
+    exit 1
+fi
+
+echo Installing project $1...
+
+ddev config --project-name=$1
+ddev start &&
+ddev composer install --no-dev &&
+echo Installing npm dependencies...
+ddev exec npm install &&
+ddev exec npm run build &&
+ddev describe &&
+ddev launch
