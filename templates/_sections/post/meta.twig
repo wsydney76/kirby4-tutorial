@@ -1,0 +1,50 @@
+{# Meta info like author, post date #}
+
+{# @param page page #}
+
+{% set author = page.author %}
+
+{% embed '@templates/_layouts/partials/box.twig' %}
+    {% block content %}
+
+        {% from '_macros/lib.twig' import img %}
+
+        <section class="flex space-x-4 rtl:space-x-reverse items-center">
+            {# Author's photo #}
+            
+            {% if author %}
+                {% set image = page.author.image %}
+
+                {% if image %}
+                    {{ img(image, {
+                        transform: {width: 40, height: 40},
+                        attr: {class: 'rounded-full'}
+                    }) }}
+                {% endif %}
+            {% endif %}
+
+            <div>
+
+                {# TODO: localized Datetime format #}
+
+                {{ 'Published on'|t }}
+
+                {% if page.date.isNotEmpty %}
+                    {{ page.date|date('short') }}
+                {% endif %}
+
+                {% if author %}
+                    {{ 'by'|t }}
+                    {{ page.author.nameOrEmail }}
+                {% endif %}
+
+                {# Note that the date format will change depending on the language #}
+                {#{{ 'Published on {date} by {name}'|t({
+                    date: page.date,
+                    name: page.author.name
+                }) }}#}
+            </div>
+        </section>
+
+    {% endblock %}
+{% endembed %}

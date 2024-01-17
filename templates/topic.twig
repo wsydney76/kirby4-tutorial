@@ -1,0 +1,27 @@
+{# The home page #}
+
+{# @param page page #}
+
+{% extends "@templates/_layouts/main.twig" %}
+
+{% do _globals.set({
+    featuredImage: latestPost ? latestPost.featuredImage.toFile() : null,
+    mainWidth: 'xl',
+    title: "#{'Topic'|t}: #{page.title}"
+}) %}
+
+{% block content %}
+    
+    {# Show parent/children #}
+    {% include '@templates/_sections/topic/hierarchy.twig' with {
+        page
+    } only %}
+
+    {{ parent() }}
+
+    {% include '@templates/_partials/pages-cards.twig' with {
+        pages: posts,
+        pagination
+    } only %}
+
+{% endblock %}

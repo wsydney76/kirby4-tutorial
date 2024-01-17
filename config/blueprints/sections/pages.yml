@@ -1,0 +1,12 @@
+type: pages
+label:
+  en: Pages
+  de: Seiten
+create:
+  - default
+templates:
+  - default
+  - posts
+  - search
+  - topics
+  - error

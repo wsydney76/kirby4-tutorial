@@ -1,0 +1,14 @@
+type: pages
+label:
+  en: Posts
+  de: Beiträge
+template: post
+layout: cards
+size: large
+search: true
+info: '<br>{{page.subheading}}<br><br>{{page.date}}'
+sortBy: date desc
+image:
+  field: featuredImage
+  cover: true
+  ratio: 16/9

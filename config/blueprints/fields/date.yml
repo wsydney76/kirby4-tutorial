@@ -1,0 +1,6 @@
+type: date
+label:
+    en: Date
+    de: Datum
+time: true
+default: now

@@ -1,0 +1,30 @@
+{#
+Create a table of contents from heading blocks.
+A 'blocks' variable is passed in and filtered using an arrow function.
+#}
+
+{# @param blocks [MatrixBlock] #}
+
+{# Lookup table #}
+{% set classes = {
+    h2: 'font-semibold',
+    h3: 'ps-8'
+} %}
+
+<nav class="bg-white p-4 border border-gray-300 shadow-md not-prose rounded">
+    <div class="font-semibold text-xl">
+        {{ 'Table of Contents'|t }}
+    </div>
+    <ul class="mt-4 text-base space-y-1">
+
+        {% for headingBlock in blocks|filter(b => b.type == 'heading') %}
+            <li>
+                <a class="{{ classes[headingBlock.level.toString()] }} hover:underline"
+                   href="#{{ headingBlock.text|kebab }}">
+                    {{ headingBlock.text|striptags }}
+                </a>
+            </li>
+        {% endfor %}
+
+    </ul>
+</nav>

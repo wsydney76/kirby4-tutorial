@@ -1,0 +1,11 @@
+name: field.blocks.heading.name
+icon: title
+wysiwyg: true
+preview: heading
+fields:
+  level:
+    extends: fields/headingLevel
+    width: 1/6
+  text:
+    extends: fields/headingText
+    width: 5/6

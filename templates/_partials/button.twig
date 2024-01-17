@@ -1,0 +1,27 @@
+{# Display a button #}
+
+{# @param type ?string Button type (link/submit) #}
+{# @param url ?string required for type link  #}
+{# @param caption string #}
+
+{% set type = type ?? 'link' %}
+
+{#
+You may think of using Tailwind's @apply statement here.
+We would recommend to avoid it and build properly designed components.
+#}
+
+{% if type == 'link' %}
+
+    <a class="block no-underline font-normal bg-white border border-gray-300 hover:bg-gray-200 transition-colors shadow-md px-3 py-1.5 rounded"
+       href="{{ url }}">{{ caption }}</a>
+
+{% endif %}
+
+{% if type == 'submit' %}
+
+    <button type="submit"
+            class="block bg-brand-700 text-white border border-gray-300 hover:bg-brand-900 transition-colors shadow-md px-3 py-1.5 rounded"
+    >{{ caption }}</button>
+
+{% endif %}

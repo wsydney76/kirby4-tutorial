@@ -1,0 +1,31 @@
+{# The home page #}
+
+{# @param page page #}
+
+{% extends "@templates/_layouts/main.twig" %}
+
+
+
+{% block content %}
+
+    {{ parent() }}
+
+    <div class="prose prose-lg">
+        {# TODO: How to display a hierarchy in Kirby??? #}
+        <ul>
+            {% for topic in topics %}
+                <li>
+                    {{ topic.link }}
+                    {% if topic.hasChildren %}
+                        <ul>
+                            {% for child in topic.children %}
+                                <li>{{ child.link }}</li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}

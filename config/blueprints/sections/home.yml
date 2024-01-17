@@ -1,0 +1,6 @@
+type: pages
+label:
+  en: Home
+  de: Startseite
+create: false
+template: home

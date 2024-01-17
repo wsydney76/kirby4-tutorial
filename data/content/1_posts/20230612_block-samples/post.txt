@@ -1,0 +1,194 @@
+Title: Block Samples
+
+----
+
+Subheading: Just a demo for all block types
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "level": "h2",
+            "text": "<strong>Heading Level 2</strong>"
+        },
+        "id": "0ddf3ac8-5035-4f54-ac54-e45dbccd3ba2",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "<p><strong>Text block with Writer field.</strong></p><p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Cras sagittis. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci. Pellentesque auctor neque nec urna. Morbi nec metus.</p>"
+        },
+        "id": "e2819dba-e686-4d9d-9a7e-f6680e892d18",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "text": "<ul><li>List Item One</li><li>List Item Two</li></ul>"
+        },
+        "id": "73984e63-9ab3-428a-ae6c-bcdd027d5c06",
+        "isHidden": false,
+        "type": "list"
+    },
+    {
+        "content": {
+            "text": "<p><u><a href=\"http://www.example.com/\"><strong>An external Link</strong></a></u></p><p>Fusce convallis metus id felis luctus adipiscing. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. In consectetuer turpis ut velit. Fusce neque. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam.</p>"
+        },
+        "id": "71651f78-3725-43f0-8da1-eda8ff977dea",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "level": "h3",
+            "text": "<strong>Heading level 3</strong>"
+        },
+        "id": "2880abf5-b1d7-46ad-b55c-380c122f2dcc",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "<p>Vestibulum fringilla pede sit amet augue. Fusce vel dui. In hac habitasse platea dictumst. Fusce egestas elit eget lorem.</p><p>Nullam dictum felis eu pede mollis pretium. Nam at tortor in tellus interdum sagittis. Nam eget dui. Nullam sagittis.</p>"
+        },
+        "id": "970bec2e-5b97-4ad7-ad57-23a728a7c676",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "level": "h2",
+            "text": "<strong>Image</strong>"
+        },
+        "id": "70034672-4458-4d60-b653-a3766dc0d6c6",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "image": [
+                "file://3hg7wbpWBpZrdLIQ"
+            ],
+            "style": "",
+            "caption": "Flowers"
+        },
+        "id": "b498a5b3-130d-4ef4-b84b-99c4eb30d1eb",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "text": "<p>Vivamus consectetuer hendrerit lacus. Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Praesent adipiscing.</p><p>Etiam rhoncus. Vestibulum suscipit nulla quis orci. Praesent ac massa at ligula laoreet iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>"
+        },
+        "id": "d0301650-c42d-4040-8be1-da71bd8c734b",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "image": [
+                "file://LwDl9U0LGSdL48dR"
+            ],
+            "style": "wide",
+            "caption": "Image in wide style"
+        },
+        "id": "c0c9222e-1b4a-490b-82c4-a9c10d3a0e31",
+        "isHidden": false,
+        "type": "image"
+    },
+    {
+        "content": {
+            "level": "h2",
+            "text": "<strong>Quotes</strong>"
+        },
+        "id": "72009a2e-65b7-41b9-9e57-5f50cc634ad2",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "level": "h2",
+            "text": "Default Style"
+        },
+        "id": "fb844d3e-8be8-418a-b7d9-3465ba6f6e49",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "Quisque libero metus, condimentum nec, tempor a, commodo mollis, magna. Ut tincidunt tincidunt erat. Etiam iaculis nunc ac metus. Suspendisse feugiat. Curabitur suscipit suscipit tellus.",
+            "cite": "Pellentesque auctor",
+            "style": "default"
+        },
+        "id": "a619d923-f7dd-482f-ac54-60edb5f5a82f",
+        "isHidden": false,
+        "type": "quote"
+    },
+    {
+        "content": {
+            "text": "<p>Integer tincidunt. Phasellus tempus. Mauris sollicitudin fermentum libero. Maecenas vestibulum mollis diam.</p>"
+        },
+        "id": "45cb70ad-02ec-44d7-8376-dba726dc3092",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "level": "h3",
+            "text": "<strong>Alternative style</strong>"
+        },
+        "id": "74464fd6-13e3-4ad1-be73-e17c267518dd",
+        "isHidden": false,
+        "type": "heading"
+    },
+    {
+        "content": {
+            "text": "<p>Aenean ut eros et nisl sagittis vestibulum. Phasellus nec sem in justo pellentesque facilisis. Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Vestibulum volutpat pretium libero. Fusce ac felis sit amet ligula pharetra condimentum.</p>"
+        },
+        "id": "b1b62de3-2faf-4fac-88ae-5b8c6a191a34",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "text": "Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Etiam sit amet orci eget eros faucibus tincidunt. Fusce neque.",
+            "cite": "Praesent vestibulum",
+            "style": "bordersTopBottom"
+        },
+        "id": "72edebea-4479-4ca8-b166-75a65919b6a3",
+        "isHidden": false,
+        "type": "quote"
+    },
+    {
+        "content": {
+            "text": "<p>Cras sagittis. Mauris turpis nunc, blandit et, volutpat molestie, porta ut, ligula. Sed magna purus, fermentum eu, tincidunt eu, varius ut, felis. Nam at tortor in tellus interdum sagittis.</p>"
+        },
+        "id": "4b41d467-90c5-47ef-aa69-1a8752fe0a72",
+        "isHidden": false,
+        "type": "text"
+    }
+]
+
+----
+
+Featuredimage: - file://LwDl9U0LGSdL48dR
+
+----
+
+Author: - user://3f6MDCar
+
+----
+
+Date: 2023-06-12 09:30:00
+
+----
+
+Topics: - page://vZl9MFOeAQhXo8PA
+
+----
+
+Uuid: NekVlrfH0WQxWQfu

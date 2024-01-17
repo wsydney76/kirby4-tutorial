@@ -1,0 +1,6 @@
+type: pages
+label:
+  en: Topics
+  de: Themen
+create: false
+query: page('topics').index

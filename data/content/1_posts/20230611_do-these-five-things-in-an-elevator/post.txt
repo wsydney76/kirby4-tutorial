@@ -1,0 +1,40 @@
+Title: Do These Five Things in an Elevator
+
+----
+
+Subheading: Upward Bound: Navigating Elevators Like a Pro – Five Rules for Success
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<ul><li>Do not scream suddenly.</li><li>Hold anything you’re in the middle of eating until you’ve stepped off the elevator again.</li><li>If you brought any live animals with you, do your best to keep them on your person.</li><li>Avoid vigorous jumping or bouncing.</li><li>Face the same direction as everybody else.</li></ul>"
+        },
+        "id": "ae720b4d-169a-48de-a664-0e5761b08598",
+        "isHidden": false,
+        "type": "list"
+    }
+]
+
+----
+
+Featuredimage: - file://qJp2Mo02U0LidMvO
+
+----
+
+Author: - user://3f6MDCar
+
+----
+
+Date: 2023-06-11 09:30:00
+
+----
+
+Topics: - page://MO5gEvHa9aBoCOTr
+
+----
+
+Uuid: YxpYkHrWgINJI6ue

@@ -1,0 +1,40 @@
+Title: Use This Trick to Save Money Dining Out
+
+----
+
+Subheading: Savor the Savings: Insider Tips for Affordable Dining Experiences
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<p>Find a recipe for the thing you want and make it at home.</p>"
+        },
+        "id": "38cd01ab-ac84-4d38-b8f8-e66a4b29f696",
+        "isHidden": false,
+        "type": "text"
+    }
+]
+
+----
+
+Featuredimage: - file://Fceh7paSu3K0wqAE
+
+----
+
+Author: - user://3f6MDCar
+
+----
+
+Date: 2023-06-10 09:25:00
+
+----
+
+Topics: - page://MO5gEvHa9aBoCOTr
+
+----
+
+Uuid: qAZnwh7gtbmamigE

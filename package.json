@@ -1,7 +1,7 @@
 {
-  "name": "kirby-kitchensink",
+  "name": "kirby4-tutorial",
   "version": "1.0.0",
-  "description": "Just the Kirby starter kit, but added a kitchen sink page in order to demonstrate all field types, including some customizations.",
+  "description": "Kirby 4 Tutorial",
   "main": "index.js",
   "scripts": {
     "dev": "npx tailwindcss -i ./resources/css/tailwind.css -o ./web/assets/css/styles.css --watch",
@@ -9,17 +9,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wsydney76/kirby-kitchensink.git"
+    "url": "git+https://github.com/wsydney76/kirby4-tutorial.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "wsydney76",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/wsydney76/kirby-kitchensink/issues"
+    "url": "https://github.com/wsydney76/kirby4-tutorial/issues"
   },
-  "homepage": "https://github.com/wsydney76/kirby-kitchensink#readme",
+  "homepage": "https://github.com/wsydney76/kirby4-tutorial#readme",
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.4.1"
   }
 }

@@ -1,0 +1,59 @@
+{# The search page #}
+
+{# @param page page #}
+
+{% extends "@templates/_layouts/main.twig" %}
+
+{# Use wide layout #}
+{% do _globals.set({
+    mainWidth: 'xl'
+}) %}
+
+{# Don't show a featured image here #}
+{% block featured %}{% endblock %}
+
+{% block content %}
+
+    {# The search form #}
+    <form class="bg-white border border-brand-300 shadow-md p-4 md:flex md:space-x-4 items-center">
+
+        <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 whitespace-nowrap" for="search-query">
+            {{ 'Search for:'|t }}
+        </label>
+
+        <input type="search"
+               id="search-query"
+               autofocus
+               class="mb-1 md:mb-0 bg-brand-100 appearance-none border border-brand-300 w-full p-2 text-gray-700 leading-tight focus:outline-none focus:bg-brand-50 focus:border-black"
+               name="q"
+               value="{{ searchQuery }}">
+
+
+        {% include '@templates/_partials/button.twig' with {
+            caption: 'Start'|t,
+            type: 'submit'
+        } only %}
+    </form>
+
+    {% if searchQuery %}
+
+        {% set count = posts|length %}
+
+        {% if count %}
+            <h2 class="mt-8 text-xl">
+                {{ count }} {{ count == 1 ? ('search result'|t) : ('search results'|t) }}
+                {# {{ '{count,plural,=1{search result} other{search results}}'|t({count: count}) }} #}
+            </h2>
+
+            {% include '@templates/_partials/pages-cards.twig' with {
+                pages: posts
+            } only %}
+        {% else %}
+            <div class="mt-4">
+                {{ 'Your search for' }} "{{ searchQuery }}" {{ 'didn’t return any results.'|t }}
+                {# {{ 'Your search for "{q}" didn’t return any results.'|t({q: searchQuery, count: count}) }} #}
+            </div>
+        {% endif %}
+    {% endif %}
+
+{% endblock %}

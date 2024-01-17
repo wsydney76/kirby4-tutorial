@@ -1,0 +1,38 @@
+{# A single card #}
+
+{# @param url string #}
+{# @param image Asset #}
+{# @param page ?page #}
+
+{% from '_macros/lib.twig' import img %}
+{% from '_macros/lib.twig' import copyrightOverlay %}
+
+<a href="{{ url }}"
+   class="group block border border-gray-300 bg-white hover:bg-brand-100 transition-colors shadow-md max-w-[400px]">
+    {% if image %}
+        <figure class="overflow-hidden relative">
+            {{ img(image, {
+                transform: option('custom.cardTransform'),
+                attr: {
+                    class: 'group-hover:scale-105 transition'
+                }
+            }) }}
+
+            {{ copyrightOverlay(image.copyright) }}
+
+        </figure>
+    {% endif %}
+    <div class="p-4">
+        {# Let calling templates insert their content #}
+        {% block content %}{% endblock %}
+
+        {# Include section/page type specific content #}
+        {% if page is defined %}
+            {% include [
+                "_sections/#{page.template}/card-content.twig",
+            ]  with {
+                page
+            } only %}
+        {% endif %}
+    </div>
+</a>

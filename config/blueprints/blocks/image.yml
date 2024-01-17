@@ -1,0 +1,14 @@
+name: field.blocks.image.name
+icon: image
+wysiwyg: true
+preview: fields
+fields:
+  image:
+    extends: fields/singleImage
+    width: 1/2
+  style:
+    extends: fields/imageStyle
+    width: 1/2
+  caption: fields/caption
+
+

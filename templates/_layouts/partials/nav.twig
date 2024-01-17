@@ -1,0 +1,43 @@
+{# Cache this, because it involves a lot of queries #}
+
+{# @param page ?page #}
+
+
+
+{# Show a navigation item for all level one pages #}
+{% set navpages = pages.listed %}
+
+
+{# localizedUrls for site switching #}
+{% set localizedUrls = [] %}
+{#{% if page is defined %}
+    #}{# Convert to object, so that this data can be used in same format whether page exists or not #}{#
+    {% set localizedUrls = page.localized.all|map(e => {url: e.url, name: e.site.name}) %}
+{% else %}
+    {% set localizedUrls = craft.app.sites.allSites |
+        filter(s => s.handle != currentSite.handle) |
+        map(s => {url: s.baseUrl ~ craft.app.request.pathInfo, name: s.name}) %}
+{% endif %}#}
+
+<nav class="my-4 md:flex md:justify-between md:items-center">
+    {# Site name with home url #}
+    <div>
+        <a class="font-bold text-3xl" href="/">{{ site.title }}</a>
+    </div>
+
+    {# Desktop nav #}
+    <div class="hidden md:flex flex-wrap space-x-4 rtl:space-x-reverse">
+        {% include '@templates/_layouts/partials/nav-desktop.twig' with {
+            navpages, localizedUrls
+        } only %}
+    </div>
+
+    {# Mobile nav #}
+    <div class="md:hidden">
+        {% include '@templates/_layouts/partials/nav-mobile.twig' with {
+            navpages, localizedUrls
+        } only  %}
+    </div>
+
+</nav>
+

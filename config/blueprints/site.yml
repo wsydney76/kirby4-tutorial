@@ -1,5 +1,35 @@
 title: Site
 
-sections:
-  pages:
-    type: pages
+columns:
+  - width: 2/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          featuredImage:
+            extends: fields/featuredImage
+            help:
+              en: The image that will be used as a fallback.
+              de: Das Bild, das als Fallback verwendet wird.
+            width: 1/2
+          copyright:
+            extends: fields/text
+            label: Copyright
+            width: 1/2
+      posts:
+        extends: sections/posts
+        label:
+          en: Latest posts
+          de: Neueste Beiträge
+        limit: 6
+        size: huge
+        parent: kirby.page("posts")
+
+  - width: 1/3
+    sections:
+      home: sections/home
+      pages: sections/pages
+      topics: sections/topics
+      files: sections/files
+
+

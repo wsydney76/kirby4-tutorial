@@ -1,0 +1,10 @@
+label: field.blocks.image.name
+type: files
+query: model.images
+layout: cardlets
+info: '{{file.alt}}<br>{{file.copyright}}'
+multiple: false
+image:
+  cover: true
+uploads:
+  template: image

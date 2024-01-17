@@ -1,0 +1,27 @@
+{# The home page #}
+
+{# @param page page #}
+
+{% extends "@templates/_layouts/main.twig" %}
+
+{% do _globals.set({
+    pageNav: true,
+    prev: page.prevListed,
+    next: page.nextListed
+}) %}
+
+{% block content %}
+    
+    {# Meta stuff for the post #}
+    {% include '@templates/_sections/post/meta.twig' with {
+        page
+    } only %}
+
+    {{ parent() }}
+    
+    {% include '@templates/_partials/pages-buttons.twig' with {
+        linkedPages: page.topics.toPages(),
+        prefix: 'Topic'
+    } only %}
+
+{% endblock %}

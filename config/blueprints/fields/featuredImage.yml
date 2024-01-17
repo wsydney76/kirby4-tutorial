@@ -1,0 +1,5 @@
+extends: fields/singleImage
+label:
+    en: Featured Image
+    de: Eintragsbild
+query: page.images.template('image')

@@ -1,0 +1,40 @@
+{# Show current topic in its position in the hierarchy #}
+
+{# @param page page #}
+
+<div class="flex items-center space-x-4 rtl:space-x-reverse">
+
+    {% set parent = page.parent %}
+    
+    {% set children = page.children %}
+
+    {% if parent.template == 'topic' or children.isNotEmpty %}
+        {% if parent.template == 'topic' %}
+
+            {# Show a button linking to parent #}
+            {% include '@templates/_partials/pages-buttons.twig' with {
+                linkedPage: parent
+            } only %}
+            <div>
+                &gt;
+            </div>
+        {% endif %}
+
+        {# the current page #}
+        <div class="font-semibold text-xl">
+            {{ page.title }}
+        </div>
+
+
+        {% if children.isNotEmpty %}
+            {# Show buttons linking to children #}
+            {# TODO: check responsive layout?? #}
+            <div>
+                &gt;
+            </div>
+            {% include '@templates/_partials/pages-buttons.twig' with {
+                linkedPages: children
+            } only %}
+        {% endif %}
+    {% endif %}
+</div>

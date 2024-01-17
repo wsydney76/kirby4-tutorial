@@ -1,0 +1,24 @@
+{# Show a simple list of pages #}
+
+{# @param query pageQuery #}
+{# @param heading ?string #}
+
+<section class="mt-8 prose prose-slate">
+
+    {% if pages %}
+
+        {% if heading is defined %}
+            <h2>{{ heading }}</h2>
+        {% endif %}
+
+        <ul>
+            {% for page in pages %}
+                <li>
+                    {{ page.link }}
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% endif %}
+
+</section>

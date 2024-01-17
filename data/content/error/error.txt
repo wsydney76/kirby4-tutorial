@@ -2,4 +2,12 @@ Title: Error
 
 ----
 
+Featuredimage: - file://D8qctCOTyg1TOASD
+
+----
+
+Text: <p>Something went wrong....</p>
+
+----
+
 Uuid: 8S17pN1ss6lSaq7R

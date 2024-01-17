@@ -1,0 +1,6 @@
+type: users
+label:
+  en: Author
+  de: Autor
+multiple: false
+required: true

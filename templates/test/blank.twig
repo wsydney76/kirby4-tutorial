@@ -1,0 +1,8 @@
+
+{% set text %}
+    <a href="http://localhost" target="_blank">Hallo</a>
+{% endset %}
+
+{{ text|md('extra') }}
+
+{{ text|md('extra')|e }}

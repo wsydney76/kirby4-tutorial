@@ -1,0 +1,16 @@
+name: field.blocks.quote.name
+icon: quote
+wysiwyg: true
+preview: fields
+fields:
+  text: fields/text
+  cite:
+    extends: fields/text
+    label:
+        en: Cite
+        de: Quelle
+    width: 3/4
+  style:
+    extends: fields/quoteStyle
+    width: 1/4
+

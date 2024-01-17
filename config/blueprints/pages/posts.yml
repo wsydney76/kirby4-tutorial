@@ -1,0 +1,39 @@
+title: Posts
+
+columns:
+  main:
+    width: 1/2
+    sections:
+      drafts:
+        extends: sections/posts
+        label:
+          en: Drafts
+          de: Entwürfe
+        status: draft
+        help:
+          en: The page is in draft mode and is only visible after login or via the secret link
+          de: Die Seite ist im Entwurfsmodus und ist nur nach Anmeldung oder über den geheimen Link sichtbar
+      unlisted:
+        extends: sections/posts
+        label:
+          en: Unlisted
+          de: Ungelistet
+        layout: cardlets
+        limit: 12
+        status: unlisted
+        help:
+          en: The page can only be accessed via the URL.
+          de: Die Seite kann nur über die URL aufgerufen werden.
+
+
+  sidebar:
+    width: 1/2
+    sections:
+      listed:
+        extends: sections/posts
+        label:
+          en: Listed
+          de: Gelistet
+        layout: cardlets
+        limit: 12
+        status: listed

@@ -1,0 +1,8 @@
+label: field.blocks.heading.level
+type: select
+empty: false
+default: "h2"
+options:
+  - h2
+  - h3
+  - h4

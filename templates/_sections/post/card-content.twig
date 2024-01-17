@@ -1,0 +1,9 @@
+{# Show post date and author in cards #}
+
+{# @param page page #}
+
+<div class="mt-4 text-sm font-semibold text-gray-600">
+    {# TODO: Date formate #}
+    {{ page.date.toDate('Y-m-d') }},
+    {{ page.author.toUser().fullname ?? '?' }}
+</div>

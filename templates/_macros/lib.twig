@@ -1,0 +1,79 @@
+{#
+Show an image.
+This can get really complex in a real world application,
+especially when using a third party plugin like imager-x
+with a lot of options, or when delivering different formats.
+
+However, images should always be output via a macro and not by using 'image.img()'
+#}
+
+{% macro img(image, params = []) %}
+
+    {% set width = params.transform.width ?? null %}
+    {% set widths = width %}
+
+    {% set mode = params.mode ?? 'crop' %}
+    {% set loading = params.attr.loading ?? 'lazy' %}
+    {% set class = params.attr.class ?? '' %}
+    {% set sizes = params.attr.sizes ?? '' %}
+
+    {% if widths is not iterable %}
+        {% set widths = [widths] %}
+    {% endif %}
+
+    {% set images = [] %}
+    {% set maxWidth = 0 %}
+    {% set maxHeight = 0 %}
+    {% set srcset = '' %}
+
+    {% for width in widths %}
+        {% if params.transform.ratio is defined and params.transform.ratio %}
+            {% set ratio = params.transform.ratio|split('/') %}
+            {% set height = (width / ratio[0] * ratio[1])|round %}
+        {% else %}
+            {% set height = params.transform.height ?? null %}
+        {% endif %}
+
+        {% if mode == 'resize' %}
+            {% set transformedImage = image.resize(width, height) %}
+        {% else %}
+            {% set transformedImage = image.crop(width, height) %}
+        {% endif %}
+
+        {% set images = images|merge([transformedImage]) %}
+        {% set maxHeight = max(maxHeight, height) %}
+        {% set maxWidth = max(maxWidth, width) %}
+        {% if widths|length > 1 %}
+
+            {% set srcset = srcset ~ "#{transformedImage.url} #{width}w#{not loop.last ? ', '}"  %}
+        {% endif %}
+    {% endfor %}
+
+
+
+
+    <img {{ attr({
+        alt: images[0].alt|e('html_attr'),
+        class: class,
+        src: images[0].url,
+        width: maxWidth,
+        height: maxHeight,
+        srcset: srcset,
+        sizes: sizes,
+        loading: loading ? loading : null
+    }) }}>
+
+{% endmacro %}
+
+{#
+Show copyright info in the bottom right corner of an image.
+This must be called within a figure tag with position: relative
+#}
+{% macro copyrightOverlay(copyright) %}
+    {% if copyright.isNotEmpty %}
+        <figcaption class="absolute bottom-0 right-0 px-2 py-1 bg-black/50 text-white text-sm">
+            {{ 'Photo'|t }}: {{ copyright }}
+        </figcaption>
+    {% endif %}
+{% endmacro %}
+

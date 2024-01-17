@@ -13,15 +13,21 @@ use site\twigextensions\SiteExtension;
 $isDev = $_SERVER['ENVIRONMENT'] === 'dev';
 $isProd = $_SERVER['ENVIRONMENT'] === 'production';
 
+$custom = require __DIR__ . '/custom.php';
+
 return [
     'debug' => $isDev,
     'panel.css' => 'assets/css/custom-panel.css',
     'thumbs' => [
         'format' => 'webp'
     ],
-    'amteich.twig.env.extensions' => [
+
+    'wearejust.twig.env.extensions' => [
         'site' => SiteExtension::class
     ],
-    'amteich.twig.cache' => $isProd,
+    'wearejust.twig.cache' => $isProd,
+
+    'custom' => require __DIR__ . '/custom.php'
 
 ];
+

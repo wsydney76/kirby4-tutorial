@@ -1,37 +1,35 @@
 {
-  "name": "getkirby/plainkit",
-  "description": "Kirby Plainkit",
+  "name": "wsydney76/kirby4-tutorial",
+  "description": "Kirby 4 Tutorial",
   "type": "project",
   "keywords": [
     "kirby",
     "cms",
-    "starterkit"
+    "tutorial"
   ],
   "authors": [
     {
-      "name": "Bastian Allgeier",
-      "email": "bastian@getkirby.com",
-      "homepage": "https://getkirby.com"
+      "name": "wsydney76",
+      "homepage": "https://github.com/wsydney76/kirby4-tutorial"
     }
   ],
-  "homepage": "https://getkirby.com",
-  "support": {
-    "email": "support@getkirby.com",
-    "issues": "https://github.com/getkirby/starterkit/issues",
-    "forum": "https://forum.getkirby.com",
-    "source": "https://github.com/getkirby/starterkit"
-  },
   "require": {
     "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
     "getkirby/cms": "^4.0",
     "wearejust/kirby-twig": "^5.0",
-    "vlucas/phpdotenv": "^5.6"
+    "vlucas/phpdotenv": "^5.6",
+    "illuminate/collections": "^10.40"
   },
   "config": {
     "allow-plugins": {
       "getkirby/composer-installer": true
     },
     "optimize-autoloader": true
+  },
+  "autoload": {
+    "psr-4": {
+      "site\\": "site/"
+    }
   },
   "scripts": {
     "post-install-cmd": [

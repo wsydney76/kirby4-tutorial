@@ -1,0 +1,5 @@
+{# Add the purify filter because markdown can contain malicious code like <script> #}
+
+{# @param block Block #}
+
+{{ block.text.kt|raw }}

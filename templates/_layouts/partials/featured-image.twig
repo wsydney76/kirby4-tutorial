@@ -1,0 +1,22 @@
+{# The featured image #}
+
+{# @param image ?Asset #}
+
+{% from '_macros/lib.twig' import img %}
+{% from '_macros/lib.twig' import copyrightOverlay %}
+
+{% if image %}
+    <figure class="my-8 relative">
+
+        {# Do not lazy load, it will always be above the fold #}
+        {{ img(image, {
+            transform: {width: 1280, height: 450},
+            srcset: [1200, 768, 480],
+            attr: {loading: null, fetchpriority: 'high'}
+        }) }}
+
+        {# Show copyright on an overlay #}
+        {{ copyrightOverlay(image.copyright) }}
+
+    </figure>
+{% endif %}

@@ -61,6 +61,5 @@ node_modules
 # ---------------------
 /.env
 
-# User Data
-# ---------------------
-/data/accounts
+
+/_temp

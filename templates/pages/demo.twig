@@ -1,0 +1,23 @@
+{# Demo for a page that is not backed by an page #}
+
+{% extends "@templates/_layouts/main.twig" %}
+
+{% switch currentSite.handle %}
+
+{% case "de" %}
+
+    {% do _globals.set('title', 'Beispiel für eine Seite ohne Eintrag') %}
+    {% set content = 'Beispiel für eine Seite ohne page' %}
+
+{% default %}
+
+    {% do _globals.set('title', 'Example for a page without page') %}
+    {% set content = 'Example for a page without page' %}
+
+{% endswitch %}
+
+{% do _globals.set('featuredImage', craft.assets.kind('image').width('>900').orderBy('rand()').one) %}
+
+{% block content %}
+    {{ content }}
+{% endblock %}

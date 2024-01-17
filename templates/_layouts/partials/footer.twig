@@ -1,0 +1,14 @@
+{# @param page ?page #}
+
+<footer class="max-w-screen-xl mx-auto mt-12 border-t border-gray-400 py-4 flex justify-between">
+    <div>
+        &copy; {{ now|date('Y') }} {{ site.copyright }}
+    </div>
+    {% if page is defined %}
+        <div>
+            {# We could check for a logged in user and permissions, but that won't work for cached pages #}
+            <a class="text-sm text-gray-600" href="{{ page.panel.url }}">{{ 'Edit'|t }}</a>
+        </div>
+    {% endif %}
+</footer>
+

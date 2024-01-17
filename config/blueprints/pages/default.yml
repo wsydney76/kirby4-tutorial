@@ -1,4 +1,4 @@
-title: Default Page
+title: Default page
 
 columns:
   main:
@@ -7,16 +7,10 @@ columns:
       fields:
         type: fields
         fields:
-          text:
-            type: writer
-            toolbar:
-              inline: false
+          featuredImage: fields/featuredImage
+          bodyContent: fields/bodyContent
   sidebar:
     width: 1/3
     sections:
-      pages:
-        type: pages
-        template: default
-      files:
-        type: files
+      files: sections/files
 

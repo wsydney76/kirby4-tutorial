@@ -1,0 +1,8 @@
+label:
+    en: Style
+    de: Stil
+type: checkboxes
+default: wide
+options:
+  wide: Wide
+  fullHeight: Full Height

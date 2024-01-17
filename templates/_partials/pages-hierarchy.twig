@@ -1,0 +1,31 @@
+{# Show structure pages #}
+
+{# @param query pageQuery #}
+{# @param heading ?string #}
+
+<section class="mt-8 prose prose-slate">
+
+    {% set pages = query.all %}
+
+    {% if pages %}
+
+        {% if heading is defined %}
+            <h2>{{ heading }}</h2>
+        {% endif %}
+
+        <ul>
+            {% nav page in pages %}
+                <li>
+                    {{ page.link }}
+                    {% ifchildren %}
+                        <ul>
+                            {% children %}
+                        </ul>
+                    {% endifchildren %}
+                </li>
+            {% endnav %}
+        </ul>
+
+    {% endif %}
+
+</section>

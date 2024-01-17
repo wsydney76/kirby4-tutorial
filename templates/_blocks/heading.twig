@@ -1,0 +1,6 @@
+{# A heading block. This will always be called within an element styled with Tailwinds prose class,
+so no styling needed here #}
+
+{# @param block MatrixBlock #}
+
+<{{ block.level }} id="{{ block.text ? block.text|kebab : '' }}">{{ block.text|striptags }}</{{ block.level }}

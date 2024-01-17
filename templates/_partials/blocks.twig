@@ -1,0 +1,17 @@
+{# @param query Blocks #}
+
+
+{% if blocks.isNotEmpty %}
+    {# Output content builder blocks with Tailwind typography. #}
+    <div class="my-8 prose prose-lg prose-slate max-w-none hyphens-auto">
+        {% for block in blocks %}
+            <div>
+                {# Call the block template #}
+                {% include "@templates/_blocks/#{block.type|kebab}.twig" with {
+                    blocks,
+                    block
+                } only  %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

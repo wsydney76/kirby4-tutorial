@@ -1,0 +1,8 @@
+label:
+  en: Style
+  de: Stil
+type: select
+default: default
+options:
+  default: Default
+  bordersTopBottom: Borders Top Bottom

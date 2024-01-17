@@ -4,6 +4,8 @@ use Kirby\Cms\App as Kirby;
 
 require '../vendor/autoload.php';
 
+require '../boostrap.php';
+
 // Load dotenv?
 if (class_exists(Dotenv\Dotenv::class)) {
     Dotenv\Dotenv::createUnsafeImmutable('..')->safeLoad();

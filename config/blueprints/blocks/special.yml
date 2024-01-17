@@ -1,0 +1,13 @@
+name: Special
+icon: wand
+wysiwyg: true
+preview: fields
+fields:
+  blockType:
+    label:
+        en: Block Type
+        de: Blocktyp
+    type: select
+    options:
+      tableOfContents: Table of Contents
+      aiWarning: AI Warning

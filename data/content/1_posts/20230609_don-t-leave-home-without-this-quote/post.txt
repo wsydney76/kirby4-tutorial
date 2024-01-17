@@ -1,0 +1,50 @@
+Title: Don’t Leave Home Without This Quote
+
+----
+
+Subheading: The Traveler's Secret: Unveiling the Must-Have Quote for Every Adventure
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<p>Philosopher Jack Handey was known to unpack some of the great complexities of the universe.</p>"
+        },
+        "id": "4e18ee7e-8fe1-442b-bbb2-5f1f14334232",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "text": "Playing dead not only comes in handy when face to face with a bear, but also at important business meetings.",
+            "cite": "Jack Handey",
+            "style": "default"
+        },
+        "id": "b8eacc4d-7cfa-4a11-83de-007d387e482f",
+        "isHidden": false,
+        "type": "quote"
+    }
+]
+
+----
+
+Featuredimage: - file://6mbZme2PxCOwoBsf
+
+----
+
+Author: - user://3f6MDCar
+
+----
+
+Date: 2023-06-09 09:20:00
+
+----
+
+Topics: - page://MO5gEvHa9aBoCOTr
+
+----
+
+Uuid: 91WdH9M6xNXJoNq4

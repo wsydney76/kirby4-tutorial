@@ -1,0 +1,57 @@
+{% set pagesByTopic = craft.pages
+    .section('post')
+    .orderBy('title')
+    .with(['topics'])
+    .all()|group(page => page.topics.first.id ?? 0) %}
+
+{% for topic in craft.pages.section('topic').orderBy('title').all() %}
+
+    <h2>{{ topic.title }}</h2>
+
+    {% for pageInTopic in pagesByTopic[topic.id] ?? [] %}
+        <p>
+            {{ pageInTopic.link }}
+        </p>
+    {% endfor %}
+
+{% endfor %}
+
+<hr>
+
+{% set pages = craft.pages
+    .section('post')
+    .with(['topics'])
+    .all
+%}
+
+{% for page in pages %}
+    {% set topic = page.topics.one %}
+    
+    <p>
+        <strong>{{ topic.title }}</strong> {{ page.title }}
+    </p>
+	
+{% endfor %}
+
+<hr>
+
+{% set pages = craft.pages
+    .section('post')
+    .with(['topics'])
+.all|multisort(['topics[0].title', 'title'])
+%}
+
+{% set lastTitle = '' %}
+{% for page in pages %}
+    {% set topic = page.topics.one %}
+
+    {% if topic.title != lastTitle %}
+        <h2>{{ topic.title }}</h2>
+        {% set lastTitle = topic.title %}
+    {% endif %}
+    
+    <p>
+        {{ page.title }}
+    </p>
+
+{% endfor %}

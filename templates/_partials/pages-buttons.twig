@@ -1,0 +1,22 @@
+{# A list of buttons linking to pages #}
+
+{# @param page ?page Buttons for a single page #}
+{# @param pages ?[page] Buttons for multiple pages #}
+{# @param prefex ?string Prefix before page title #}
+
+{% if linkedPage is defined  %}
+    {% set linkedPages = linkedPage ? [linkedPage] : null %}
+{% endif %}
+
+{% set prefix = prefix ?? '' %}
+
+{% if linkedPages %}
+    <div class="my-8 flex space-x-3 rtl:space-x-reverse">
+        {% for linkedPage in linkedPages %}
+            {% include '@templates/_partials/button.twig' with {
+            	url: linkedPage.url,
+                caption: prefix ? "#{prefix}: #{linkedPage.title}": linkedPage.title
+            } only %}
+        {% endfor %}
+    </div>
+{% endif %}

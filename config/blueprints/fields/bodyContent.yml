@@ -1,0 +1,12 @@
+type: blocks
+label:
+  en: Content
+  de: Inhalt
+fieldsets:
+  - text
+  - heading
+  - list
+  - image
+  - quote
+  - special
+pretty: true

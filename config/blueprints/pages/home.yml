@@ -1,0 +1,16 @@
+title: Home page
+
+columns:
+  main:
+    width: 2/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          featuredImage: fields/featuredImage
+          bodyContent: fields/bodyContent
+  sidebar:
+    width: 1/3
+    sections:
+      files: sections/files
+

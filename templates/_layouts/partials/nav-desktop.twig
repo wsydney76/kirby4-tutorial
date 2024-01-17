@@ -1,0 +1,17 @@
+{# @param navpages [page] #}
+{# @param localizedUrls [{url, name}] #}
+
+{% for navpage in navpages %}
+    {#
+    Underline current nav. This requires the slug of an index page (e.g 'posts') and the
+    first part of a channel page to match (e.g. 'posts/my-first-post')
+    #}
+
+    
+    <a href="{{ navpage.url }}" class="{{ navpage.isOpen ? 'underline' }}">{{ navpage.title }}</a>
+
+{% endfor %}
+
+{% for localizedUrl in localizedUrls %}
+    <a href="{{ localizedUrl.url }}">{{ localizedUrl.name }}</a>
+{% endfor %}

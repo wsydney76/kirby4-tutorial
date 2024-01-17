@@ -1,0 +1,23 @@
+{# @param title string #}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{{ title }} | {{ site.title }}</title>
+
+    {# https://favicon.io/favicon-generator/ #}
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    {#
+    SEO here, typically inserted by a plugin using a template hook.
+    This includes things like
+        * canonical url
+        * alternate urls for different sites
+        * meta tags
+    #}
+
+    {# load assets #}
+    <link href="/assets/css/styles.css" rel="stylesheet">
+</head>

@@ -1,0 +1,22 @@
+{# The home page #}
+
+{# @param page page #}
+
+{% extends "@templates/_layouts/main.twig" %}
+
+
+{% do _globals.set({
+    featuredImage: latestPost ? latestPost.featuredImage.toFile() : null,
+    mainWidth: 'xl'
+}) %}
+
+{% block content %}
+    
+    {{ parent() }}
+
+    {% include '@templates/_partials/pages-cards.twig' with {
+        pages: posts,
+        pagination
+    } only %}
+
+{% endblock %}

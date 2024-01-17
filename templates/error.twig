@@ -1,0 +1,13 @@
+{# The home page #}
+
+{# @param page page #}
+
+{% extends "@templates/_layouts/main.twig" %}
+
+{% block content %}
+
+    <div class="prose prose-lg">
+        {{ page.text|raw }}
+    </div>
+
+{% endblock %}
