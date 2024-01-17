@@ -3,31 +3,26 @@
 {# @param page ?page #}
 
 
-
 {# Show a navigation item for all level one pages #}
 {% set navpages = pages.listed %}
 
 
 {# localizedUrls for site switching #}
-{% set localizedUrls = [] %}
 
-{% for language in kirby.languages %}
-	{% if language.code != kirby.language.code %}
-        {% set localizedUrls = localizedUrls|push({
-            url: page.url(language.code),
-            name: language.name
-        }) %}
-	{% endif %}
-{% endfor %}
 
-{#{% if page is defined %}
-    #}{# Convert to object, so that this data can be used in same format whether page exists or not #}{#
-    {% set localizedUrls = page.localized.all|map(e => {url: e.url, name: e.site.name}) %}
+{% set localizedUrls = kirby.languages
+    |filter(l => l.code != kirby.language.code)
+    |map(l => {url: page.url(l.code), name: l.name})
+%}
+
+{# {% if page is defined %}
+#}{# Convert to object, so that this data can be used in same format whether page exists or not #}{#
+{% set localizedUrls = page.localized.all|map(e => {url: e.url, name: e.site.name}) %}
 {% else %}
-    {% set localizedUrls = craft.app.sites.allSites |
-        filter(s => s.handle != currentSite.handle) |
-        map(s => {url: s.baseUrl ~ craft.app.request.pathInfo, name: s.name}) %}
-{% endif %}#}
+{% set localizedUrls = craft.app.sites.allSites |
+    filter(s => s.handle != currentSite.handle) |
+    map(s => {url: s.baseUrl ~ craft.app.request.pathInfo, name: s.name}) %}
+{% endif %} #}
 
 <nav class="my-4 md:flex md:justify-between md:items-center">
     {# Site name with home url #}
@@ -46,7 +41,7 @@
     <div class="md:hidden">
         {% include '@templates/_layouts/partials/nav-mobile.twig' with {
             navpages, localizedUrls
-        } only  %}
+        } only %}
     </div>
 
 </nav>

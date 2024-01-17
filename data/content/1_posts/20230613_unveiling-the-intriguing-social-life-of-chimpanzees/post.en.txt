@@ -113,7 +113,7 @@ Bodycontent:
     {
         "content": {
             "level": "h3",
-            "text": "<p><strong>Dissenting opinion</strong></p>"
+            "text": "<strong>Dissenting opinion</strong>"
         },
         "id": "11a7999e-2922-49f8-9a71-77533b009464",
         "isHidden": false,

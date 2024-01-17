@@ -6,9 +6,9 @@
 
     {% set parent = page.parent %}
     
-    {% set children = page.children %}
+    {% set children = collect(page.children) %}
 
-    {% if parent.template == 'topic' or children.isNotEmpty %}
+    {% if parent.template == 'topic' or children.count %}
         {% if parent.template == 'topic' %}
 
             {# Show a button linking to parent #}
@@ -25,8 +25,7 @@
             {{ page.title }}
         </div>
 
-
-        {% if children.isNotEmpty %}
+        {% if children.count %}
             {# Show buttons linking to children #}
             {# TODO: check responsive layout?? #}
             <div>

@@ -21,4 +21,9 @@ class DefaultPage extends Page
     {
         return parent::author()->toUser();
     }
+
+    public function cpEditUrl()
+    {
+        return $this->panel()->url();
+    }
 }

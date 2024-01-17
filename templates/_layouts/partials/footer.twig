@@ -7,7 +7,7 @@
     {% if page is defined %}
         <div>
             {# We could check for a logged in user and permissions, but that won't work for cached pages #}
-            <a class="text-sm text-gray-600" href="{{ page.panel.url }}">{{ 'Edit'|t }}</a>
+            <a class="text-sm text-gray-600" href="{{ page.cpEditUrl }}">{{ 'Edit'|t }}</a>
         </div>
     {% endif %}
 </footer>

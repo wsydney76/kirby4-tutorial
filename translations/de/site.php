@@ -9,7 +9,7 @@ return [
     'Photo' => 'Foto',
     '“' => '„',
     '”' => '“',
-    'This text is AI-generated. Maybe correct, maybe not.' => 'Dieser Text ist KI-generiert. Vielleicht korrekt, vielleicht auch nicht.',
+    'msg_aiwarning' => 'Dieser Text ist KI-generiert. Vielleicht korrekt, vielleicht auch nicht.',
     'Table of Contents' => 'Inhaltsverzeichnis',
     'Untitled' => 'Ohne Titel',
     'Jump to content' => 'Springe zum Inhalt',

@@ -24,14 +24,10 @@ namespace site\_faux;
 
 use Illuminate\Support\Collection;
 use Kirby\Cms\App;
-use Kirby\Cms\Block;
 use Kirby\Cms\Blocks;
-use Kirby\Cms\File;
 use Kirby\Cms\Layout;
 use Kirby\Cms\Layouts;
-use Kirby\Cms\Pages;
 use Kirby\Cms\Pagination;
-use Kirby\Cms\Site;
 use Twig\Extension\AbstractExtension;
 use Twig\Extension\GlobalsInterface;
 
@@ -47,7 +43,7 @@ class FauxTwigExtension extends AbstractExtension implements GlobalsInterface
         return [
             'page' => new CustomPage(),
             'post' => new CustomPage(),
-            'site' => new Site(),
+            'site' => new CustomSite(),
             'kirby' => new App(),
             'pages' => new Collection(),
             'posts' => new Collection(),

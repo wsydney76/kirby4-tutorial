@@ -12,16 +12,10 @@ use Kirby\Content\Field;
 
 class CustomPage extends DefaultPage
 {
-    public string $headline;
-    public string $subheadline;
-    public string $layout;
-    public string $address;
-    public string $phone;
-    public string $email;
-    public string $level;
-    public string $social;
+
+    public Field $subheading;
     public string $text;
-    public $date;
+    public Field $date;
     public File $cover;
     public Blocks $bodyContent;
 

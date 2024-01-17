@@ -26,8 +26,7 @@
 {% endapply -%}
 <!DOCTYPE html>
 
-{# todo: add kirby.language.... #}
-<html lang="en" dir="ltr" style="overflow-y: scroll;">
+<html lang="{{ kirby.language.code }}" dir="{{ kirby.language.direction }}" style="overflow-y: scroll;">
 {# The style will make sure there is always a vertical scrollbar, so that there no anoying horizontal shifts for short pages #}
 
 {% include '@templates/_layouts/partials/head.twig' %}

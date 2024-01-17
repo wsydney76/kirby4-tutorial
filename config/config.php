@@ -19,6 +19,7 @@ return [
     'debug' => $isDev,
 
     'languages' => true,
+    'languages.detect' => true,
 
     'panel.css' => 'assets/css/custom-panel.css',
 
