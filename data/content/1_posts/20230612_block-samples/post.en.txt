@@ -111,7 +111,7 @@ Bodycontent:
     },
     {
         "content": {
-            "level": "h2",
+            "level": "h3",
             "text": "Default Style"
         },
         "id": "fb844d3e-8be8-418a-b7d9-3465ba6f6e49",
