@@ -17,7 +17,11 @@ $custom = require __DIR__ . '/custom.php';
 
 return [
     'debug' => $isDev,
+
+    'languages' => true,
+
     'panel.css' => 'assets/css/custom-panel.css',
+
     'thumbs' => [
         'format' => 'webp'
     ],
