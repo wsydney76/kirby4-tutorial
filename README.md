@@ -16,6 +16,8 @@ Trying to make it easier for devs to switch between Craft and Kirby.
 
 ## Installation
 
+A user with credentials `admin@example.com`/`admin` is created during installation.
+
 ### DDEV
 
 * Clone repository
@@ -23,6 +25,8 @@ Trying to make it easier for devs to switch between Craft and Kirby.
 * Run `bash setup/install <projectname>`
 
 ### Manual Installation
+
+Untested...
 
 * Clone repository
 * `cd` into project directory
