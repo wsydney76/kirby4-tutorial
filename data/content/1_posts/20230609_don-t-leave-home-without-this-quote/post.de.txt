@@ -1,0 +1,33 @@
+Title: Gehen Sie nicht ohne dieses Zitat aus dem Haus
+
+----
+
+Slug: gehen-sie-nicht-ohne-dieses-zitat-aus-dem-haus
+
+----
+
+Subheading: Das Geheimnis des Reisenden: Enthüllung des Must-Have-Zitats für jedes Abenteuer
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<p>Der Philosoph Jack Handey war dafür bekannt, dass er über einige der großen Komplexitäten des Universums auspackte.</p>"
+        },
+        "id": "4e18ee7e-8fe1-442b-bbb2-5f1f14334232",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "text": "Sich tot zu stellen ist nicht nur praktisch, wenn man einem Bären gegenübersteht, sondern auch in wichtigen Meetings",
+            "cite": "Jack Handey"
+        },
+        "id": "b8eacc4d-7cfa-4a11-83de-007d387e482f",
+        "isHidden": false,
+        "type": "quote"
+    }
+]

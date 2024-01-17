@@ -4,3 +4,4 @@ label:
     de: Datum
 time: true
 default: now
+translate: false

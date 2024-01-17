@@ -50,6 +50,7 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
             new TwigFilter('date', [$this, 'dateFunction']),
             new TwigFilter('email', [$this, 'emailFunction']),
             new TwigFilter('kebab', [$this, 'kebabFunction']),
+            new TwigFilter('push', [$this, 'pushFunction']),
             new TwigFilter('t', [$this, 'translateFunction']),
             new TwigFilter('tel', [$this, 'telFunction']),
             new TwigFilter('truncate', [$this, 'truncateFunction']),
@@ -74,11 +75,14 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
 
     public function dateFunction($date, $format = null)
     {
-        // $locale = kirby()->language()->code();
-
+        $languageCode = kirby()->language()->code();
 
         if ($format && $format === 'short') {
-            $format = 'm/d/Y';
+            if ($languageCode === 'de') {
+                $format = 'd.m.Y';
+            } else {
+                $format = 'm/d/Y';
+            }
         }
 
         if (is_string($date) === true) {
@@ -113,6 +117,11 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
         return Str::kebab($text);
     }
 
+    public function pushFunction($array, $value)
+    {
+        $array[] = $value;
+        return $array;
+    }
 
     public function telFunction($tel)
     {

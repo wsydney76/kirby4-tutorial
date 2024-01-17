@@ -3,3 +3,4 @@ label:
   en: Topics
   de: Themen
 query: page('topics').index
+translate: false

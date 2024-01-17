@@ -3,3 +3,4 @@ label:
     en: Featured Image
     de: Eintragsbild
 query: page.images.template('image')
+translate: false

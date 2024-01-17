@@ -50,7 +50,7 @@
             } only %}
         {% else %}
             <div class="mt-4">
-                {{ 'Your search for' }} "{{ searchQuery }}" {{ 'didn’t return any results.'|t }}
+                {{ 'Your search for'|t }} "{{ searchQuery }}" {{ 'didn’t return any results.'|t }}
                 {# {{ 'Your search for "{q}" didn’t return any results.'|t({q: searchQuery, count: count}) }} #}
             </div>
         {% endif %}

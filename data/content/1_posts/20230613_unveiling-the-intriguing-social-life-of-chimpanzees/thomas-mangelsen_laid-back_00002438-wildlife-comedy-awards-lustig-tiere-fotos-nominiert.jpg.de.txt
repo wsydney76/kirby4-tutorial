@@ -1,4 +1,4 @@
-Alt: A relaxed young chimpanzee
+Alt: Ein entspannter junger Schimpanse
 
 ----
 
@@ -7,10 +7,6 @@ Copyright: World Wildlife Comedy Award
 ----
 
 Caption: 
-
-----
-
-Uuid: AL8FrEqihNvvBlhp
 
 ----
 

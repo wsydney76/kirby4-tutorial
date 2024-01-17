@@ -10,3 +10,4 @@ fieldsets:
   - quote
   - special
 pretty: true
+translate: true

@@ -1,0 +1,24 @@
+Title: Mit diesem Trick können Sie beim Essengehen Geld sparen
+
+----
+
+Slug: mit-diesem-trick-koennen-sie-beim-essengehen-geld-sparen
+
+----
+
+Subheading: Genießen Sie zu sparen: Insider-Tipp für erschwingliche Essenserlebnisse
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<p>Finden Sie ein Rezept für das, was Sie mögen, und machen Sie es zu Hause.</p>"
+        },
+        "id": "38cd01ab-ac84-4d38-b8f8-e66a4b29f696",
+        "isHidden": false,
+        "type": "text"
+    }
+]

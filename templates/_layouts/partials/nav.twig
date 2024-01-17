@@ -10,6 +10,16 @@
 
 {# localizedUrls for site switching #}
 {% set localizedUrls = [] %}
+
+{% for language in kirby.languages %}
+	{% if language.code != kirby.language.code %}
+        {% set localizedUrls = localizedUrls|push({
+            url: page.url(language.code),
+            name: language.name
+        }) %}
+	{% endif %}
+{% endfor %}
+
 {#{% if page is defined %}
     #}{# Convert to object, so that this data can be used in same format whether page exists or not #}{#
     {% set localizedUrls = page.localized.all|map(e => {url: e.url, name: e.site.name}) %}

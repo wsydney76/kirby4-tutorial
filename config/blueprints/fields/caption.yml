@@ -2,3 +2,4 @@ label: field.blocks.image.caption
 type: writer
 icon: text
 inline: true
+translate: true

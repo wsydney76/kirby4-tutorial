@@ -4,3 +4,4 @@ label:
   de: Autor
 multiple: false
 required: true
+translate: false

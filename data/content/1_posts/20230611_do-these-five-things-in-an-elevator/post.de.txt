@@ -1,0 +1,24 @@
+Title: Tun Sie diese fünf Dinge in einem Aufzug
+
+----
+
+Slug: tun-sie-diese-fuenf-dinge-in-einem-aufzug
+
+----
+
+Subheading: Upward Bound: Fahrstuhlfahren wie ein Profi - Fünf Regeln für den Erfolg
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<ul><li>Schreien Sie nicht plötzlich.</li><li>Behalten Sie alles bei sich, was Sie gerade essen, bis Sie den Aufzug wieder verlassen haben.</li><li>Wenn Sie lebende Tiere mitgebracht haben, tun Sie Ihr Bestes, um sie bei sich zu behalten.</li><li>Vermeiden Sie kräftiges Springen oder Hüpfen.</li><li>Schauen Sie in die gleiche Richtung wie alle anderen.</li></ul>"
+        },
+        "id": "ae720b4d-169a-48de-a664-0e5761b08598",
+        "isHidden": false,
+        "type": "list"
+    }
+]

@@ -21,7 +21,7 @@
     
     {% include '@templates/_partials/pages-buttons.twig' with {
         linkedPages: page.topics.toPages(),
-        prefix: 'Topic'
+        prefix: 'Topic'|t
     } only %}
 
 {% endblock %}
