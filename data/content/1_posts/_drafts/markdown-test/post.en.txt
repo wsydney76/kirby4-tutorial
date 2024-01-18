@@ -2,11 +2,30 @@ Title: Markdown Test
 
 ----
 
-Uuid: sgZZx1kGQTr6SKAf
+Subheading: Playing around with markdown
 
 ----
 
-Bodycontent: 
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<p>Phasellus ullamcorper ipsum rutrum nunc</p><p><strong>Phasellus ullamcorper ipsum rutrum nunc</strong></p><p><a href=\"/@/page/SOYSAlWl0xPRBa7n\">Link</a></p><p>&lt;script&gt;alert('This is hopefully escaped')&lt;/script&gt;</p>"
+        },
+        "id": "bcb828ff-7f5c-47f0-a813-e07285063709",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "text": "## A heading\n\n[A link](https://example.com)\n\nSome __bold__ text\n\n<script>alert('This is hopefully escaped')</script>\n\nIt is not by default, but with html purifier applied."
+        },
+        "id": "e4a35da9-fcc7-4351-b41d-e01435adce34",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
 
 ----
 
@@ -18,8 +37,12 @@ Author:
 
 ----
 
-Date: 2024-01-18 11:00:04
+Date: 2024-01-18 11:00:00
 
 ----
 
 Topics: 
+
+----
+
+Uuid: sgZZx1kGQTr6SKAf
