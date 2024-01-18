@@ -4,3 +4,6 @@ label:
   de: Themen
 query: page('topics').index
 translate: false
+empty:
+  en: There are no topics yet.
+  de: Es gibt noch keine Themen.

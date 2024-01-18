@@ -18,8 +18,10 @@
                 } %}
                     {% block content %}
                         <div class="font-semibold text-lg">{{ page.title }}</div>
-                        
                         {% set block = page.bodyContent.toBlocks|filter(b => b.type == 'text')|first %}
+                        {% if not block %}
+                            {% set block = page.bodyContent.toBlocks|filter(b => b.type == 'list')|first %}
+                        {% endif %}
                         {% if block %}
                             <div class="mt-2 text-sm">
 

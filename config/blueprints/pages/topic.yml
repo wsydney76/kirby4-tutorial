@@ -18,6 +18,9 @@ columns:
         label:
           en: Sub Topics
           de: Unterthemen
+        empty:
+          en: There are no sub topics yet.
+          de: Es gibt noch keine Unterthemen.
         template: topic
       files: sections/files
 

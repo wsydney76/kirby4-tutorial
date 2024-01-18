@@ -1,4 +1,4 @@
-Alt: Me at work
+Alt: Ich bei der Arbeit
 
 ----
 
@@ -11,10 +11,6 @@ Caption:
 ----
 
 Link: 
-
-----
-
-Uuid: Wr7jPuSXCnNFlEEF
 
 ----
 
