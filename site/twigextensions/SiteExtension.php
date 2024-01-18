@@ -13,6 +13,7 @@ use Twig\Extension\GlobalsInterface;
 use Twig\Markup;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
+use function esc;
 use function print_r;
 
 /**
@@ -50,6 +51,8 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
             new TwigFilter('date', [$this, 'dateFunction']),
             new TwigFilter('email', [$this, 'emailFunction']),
             new TwigFilter('kebab', [$this, 'kebabFunction']),
+            new TwigFilter('md', [$this, 'markdownFunction']),
+            new TwigFilter('markdown', [$this, 'markdownFunction']),
             new TwigFilter('push', [$this, 'pushFunction']),
             new TwigFilter('t', [$this, 'translateFunction']),
             new TwigFilter('tel', [$this, 'telFunction']),
@@ -115,6 +118,11 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
     public function kebabFunction($text)
     {
         return Str::kebab($text);
+    }
+
+    public function markdownFunction($text)
+    {
+        return new Markup(kirbytext($text), 'UTF-8');
     }
 
     public function pushFunction($array, $value)

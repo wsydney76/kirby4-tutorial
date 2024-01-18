@@ -9,5 +9,6 @@ fieldsets:
   - image
   - quote
   - special
+  - markdown
 pretty: true
 translate: true

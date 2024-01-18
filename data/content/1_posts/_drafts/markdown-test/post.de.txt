@@ -1,0 +1,28 @@
+Title: Markdown Test
+
+----
+
+Bodycontent:
+
+[
+    {
+        "content": {
+            "text": "<p>Phasellus ullamcorper ipsum rutrum nunc</p><p><strong>Phasellus ullamcorper ipsum rutrum nunc</strong></p><p><a href=\"/@/page/SOYSAlWl0xPRBa7n\">Link</a></p><p>&lt;script&gt;alert('This is hopefully escaped')&lt;/script&gt;</p>"
+        },
+        "id": "39e291c6-2976-4927-a6e2-9cce645e4efb",
+        "isHidden": false,
+        "type": "text"
+    },
+    {
+        "content": {
+            "text": "## A heading\n\n[A link](https://example.com)\n\nSome __bold__ text\n\n<script>alert('This is hopefully escaped')</script>\n\nIt is not."
+        },
+        "id": "fe5bba67-6e52-4e60-8d6f-af945ae5ebaa",
+        "isHidden": false,
+        "type": "markdown"
+    }
+]
+
+----
+
+Subheading: Playing around with markdown
