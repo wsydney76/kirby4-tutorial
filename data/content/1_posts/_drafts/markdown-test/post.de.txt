@@ -15,7 +15,7 @@ Bodycontent:
     },
     {
         "content": {
-            "text": "## A heading\n\n[A link](https://example.com)\n\nSome __bold__ text\n\n<script>alert('This is hopefully escaped')</script>\n\nIt is not."
+            "text": "## A heading\n\n[A link](https://example.com)\n\nSome __bold__ text\n\n<script>alert('This is hopefully escaped')</script>\n\nIt is not by default, but with html purifier applied."
         },
         "id": "fe5bba67-6e52-4e60-8d6f-af945ae5ebaa",
         "isHidden": false,

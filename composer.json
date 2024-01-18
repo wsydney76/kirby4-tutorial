@@ -18,7 +18,8 @@
     "getkirby/cms": "^4.0",
     "wearejust/kirby-twig": "^5.0",
     "vlucas/phpdotenv": "^5.6",
-    "illuminate/collections": "^10.40"
+    "illuminate/collections": "^10.40",
+    "ezyang/htmlpurifier": "^4.6"
   },
   "config": {
     "allow-plugins": {

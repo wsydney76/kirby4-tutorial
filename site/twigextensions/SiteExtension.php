@@ -4,8 +4,11 @@
 namespace site\twigextensions;
 
 use DateTime;
+use Exception;
+use HTMLPurifier;
 use Illuminate\Support\Collection;
 use Kirby\Content\Field;
+use Kirby\Data\Json;
 use Kirby\Toolkit\Html;
 use Kirby\Toolkit\Str;
 use Twig\Extension\AbstractExtension;
@@ -13,10 +16,15 @@ use Twig\Extension\GlobalsInterface;
 use Twig\Markup;
 use Twig\TwigFilter;
 use Twig\TwigFunction;
-use function esc;
+use function kirby;
 use function print_r;
 
 /**
+ * Twig extension that enables some crafty variables, functions and filters.
+ *
+ * For more see in Craft CMS:
+ * /vendor/craftcms/cms/src/web/twig/Extension.php
+ *
  * @author    wsydney76
  * @package   Site
  * @since     1.0.0
@@ -34,28 +42,29 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
     public function getFunctions()
     {
         return [
-            new TwigFunction('a', [$this, 'aFunction']),
+            new TwigFunction('a', [$this, 'aFunction'],['is_safe' => ['html']]),
             new TwigFunction('attr', [$this, 'attrFunction']),
             new TwigFunction('collect', [$this, 'collectFunction']),
             new TwigFunction('dd', [$this, 'dumpAndDieFunction']),
             new TwigFunction('email', [$this, 'emailFunction']),
-            new TwigFunction('tel', [$this, 'telFunction']),
+            new TwigFunction('tel', [$this, 'telFunction'],['is_safe' => ['html']]),
         ];
     }
 
     public function getFilters()
     {
         return [
-            new TwigFilter('a', [$this, 'aFunction']),
+            new TwigFilter('a', [$this, 'aFunction'],['is_safe' => ['html']]),
             new TwigFilter('attr', [$this, 'attrFunction']),
             new TwigFilter('date', [$this, 'dateFunction']),
             new TwigFilter('email', [$this, 'emailFunction']),
             new TwigFilter('kebab', [$this, 'kebabFunction']),
-            new TwigFilter('md', [$this, 'markdownFunction']),
-            new TwigFilter('markdown', [$this, 'markdownFunction']),
+            new TwigFilter('md', [$this, 'markdownFunction'], ['is_safe' => ['html']]),
+            new TwigFilter('markdown', [$this, 'markdownFunction', ['is_safe' => ['html']]]),
+            new TwigFilter('purify', [$this, 'purifyFunction'], ['is_safe' => ['html']]),
             new TwigFilter('push', [$this, 'pushFunction']),
             new TwigFilter('t', [$this, 'translateFunction']),
-            new TwigFilter('tel', [$this, 'telFunction']),
+            new TwigFilter('tel', [$this, 'telFunction'], ['is_safe' => ['html']]),
             new TwigFilter('truncate', [$this, 'truncateFunction']),
         ];
     }
@@ -63,7 +72,7 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
 
     public function aFunction($url, $text)
     {
-        return new Markup(Html::a($url, $text), 'UTF-8');
+        return Html::a($url, $text);
     }
 
     public function attrFunction($attr)
@@ -122,7 +131,31 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
 
     public function markdownFunction($text)
     {
-        return new Markup(kirbytext($text), 'UTF-8');
+        return kirbytext($text);
+    }
+
+    public function purifyFunction(?string $html, array|string|null $config = null)
+    {
+        if ($html === null) {
+            return null;
+        }
+
+        if (is_string($config)) {
+            $path = kirby()->root('config') . DIRECTORY_SEPARATOR . 'htmlpurifier' .
+                DIRECTORY_SEPARATOR . $config . '.json';
+            $config = null;
+            if (!is_file($path)) {
+                // Craft::warning("No HTML Purifier config found at $path.");
+            } else {
+                try {
+                    $config = Json::decode(file_get_contents($path));
+                } catch (Exception $e) {
+                    // Craft::warning("Invalid HTML Purifier config at $path.");
+                }
+            }
+        }
+
+        return (new HTMLPurifier($config))->purify($html);
     }
 
     public function pushFunction($array, $value)
@@ -133,7 +166,7 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
 
     public function telFunction($tel)
     {
-        return new Markup(Html::tel($tel), 'UTF-8');
+        return Html::tel($tel);
     }
 
     public function translateFunction($text)
