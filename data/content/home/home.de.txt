@@ -7,7 +7,7 @@ Bodycontent:
 [
     {
         "content": {
-            "text": "<p>Kirby 4 Spielplatz.</p><p>Sehr wenig PHP, kein JavaScript, keine Plugins, keine externen Schriftarten.</p><p>Nur Twig. Und Tailwind CSS</p>"
+            "text": "<p>Kirby 4 Spielplatz.</p><p>Sehr wenig PHP, kein JavaScript, keine Plugins, keine externen Schriftarten.</p><p>Nur Twig (ok, das ist ein Plugin...). Und Tailwind CSS</p>"
         },
         "id": "c3390a94-fdab-4a07-a6f7-29828aff2b18",
         "isHidden": false,
