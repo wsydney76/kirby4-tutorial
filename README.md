@@ -18,6 +18,8 @@ Trying to make it easier for devs to switch between Craft and Kirby.
 
 A user with credentials `admin@example.com`/`admin` is created during installation.
 
+Goto the panel at `/panel`.
+
 ### DDEV
 
 * Clone repository
