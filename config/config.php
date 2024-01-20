@@ -18,6 +18,15 @@ $custom = require __DIR__ . '/custom.php';
 return [
     'debug' => $isDev,
 
+//    'cache' => [
+//        'pages' => [
+//            'active' => true,
+//            'ignore' => function ($page) {
+//                return $page->title()->value() === 'Do not cache me';
+//            }
+//        ]
+//    ],
+
     'languages' => true,
     'languages.detect' => true,
 
