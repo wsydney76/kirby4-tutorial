@@ -44,6 +44,13 @@ Icon
 /storage/sessions/*
 !/storage/sessions/index.html
 
+# Sessions
+# ---------------
+
+/storage/export/*
+!/storage/export/index.html
+
+
 # License
 # ---------------
 

@@ -1,0 +1,6 @@
+{
+  "roots": {
+    "content": "./data/content",
+    "templates": "./templates"
+  }
+}
