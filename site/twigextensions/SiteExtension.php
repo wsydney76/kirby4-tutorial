@@ -25,6 +25,11 @@ use function print_r;
  * For more see in Craft CMS:
  * /vendor/craftcms/cms/src/web/twig/Extension.php
  *
+ * Warning: Bringing Craft's twig extension ideas/concepts/code snippets here
+ * may infringe on Craft's license.
+ *
+ * Make sure to check the license before doing so in real life.
+ *
  * @author    wsydney76
  * @package   Site
  * @since     1.0.0
@@ -136,22 +141,22 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
 
     public function purifyFunction(?string $html, array|string|null $config = null)
     {
-        if ($html === null) {
+        if (!$html) {
             return null;
         }
 
         if (is_string($config)) {
             $path = kirby()->root('config') . DIRECTORY_SEPARATOR . 'htmlpurifier' .
                 DIRECTORY_SEPARATOR . $config . '.json';
-            $config = null;
+
             if (!is_file($path)) {
-                // Craft::warning("No HTML Purifier config found at $path.");
-            } else {
-                try {
-                    $config = Json::decode(file_get_contents($path));
-                } catch (Exception $e) {
-                    // Craft::warning("Invalid HTML Purifier config at $path.");
-                }
+                die("No HTML Purifier config found at $path.");
+            }
+
+            try {
+                $config = Json::decode(file_get_contents($path));
+            } catch (Exception $e) {
+                die("Invalid HTML Purifier config at $path.");
             }
         }
 
