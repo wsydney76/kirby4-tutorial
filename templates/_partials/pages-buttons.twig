@@ -13,7 +13,7 @@
 {% if linkedPages %}
     <div class="my-8 flex space-x-3 rtl:space-x-reverse">
         {% for linkedPage in linkedPages %}
-            {% include '@templates/_partials/button.twig' with {
+            {% include '_partials/button.twig' with {
             	url: linkedPage.url,
                 caption: prefix ? "#{prefix}: #{linkedPage.title}": linkedPage.title
             } only %}

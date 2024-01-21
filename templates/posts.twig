@@ -5,7 +5,7 @@
 {# @param latestPost Page #}
 {# @param pagination Pagination #}
 
-{% extends "@templates/_layouts/main.twig" %}
+{% extends "_layouts/main.twig" %}
 
 
 {% do _globals.set({
@@ -17,7 +17,7 @@
     
     {{ parent() }}
 
-    {% include '@templates/_partials/pages-cards.twig' with {
+    {% include '_partials/pages-cards.twig' with {
         pages: posts,
         pagination
     } only %}

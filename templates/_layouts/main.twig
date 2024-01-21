@@ -29,7 +29,7 @@
 <html lang="{{ kirby.language.code }}" dir="{{ kirby.language.direction }}" style="overflow-y: scroll;">
 {# The style will make sure there is always a vertical scrollbar, so that there no anoying horizontal shifts for short pages #}
 
-{% include '@templates/_layouts/partials/head.twig' %}
+{% include '_layouts/partials/head.twig' %}
 
 {% block body %}
 
@@ -44,7 +44,7 @@
         <header class="mb-8 max-w-screen-xl mx-auto">
 
             {# The top bar #}
-            {% include '@templates/_layouts/partials/nav.twig' %}
+            {% include '_layouts/partials/nav.twig' %}
 
             {#
             We output common things like featuredImage / title in the main template
@@ -58,7 +58,7 @@
                 Think of live preview!
                 #}
                 {% if featuredImage %}
-                    {% include '@templates/_layouts/partials/featured-image.twig' with {
+                    {% include '_layouts/partials/featured-image.twig' with {
                         image: featuredImage
                     } only %}
                 {% endif %}
@@ -91,7 +91,7 @@
                     {% if page.bodyContent.isNotEmpty %}
 
                         {# Just pass the query, so that the include can add stuff like eager loading on its own. #}
-                        {% include '@templates/_partials/blocks.twig' with {
+                        {% include '_partials/blocks.twig' with {
                             blocks: collect(page.bodyContent.toBlocks())
                         } only %}
                     {% endif %}
@@ -106,7 +106,7 @@
         {# Previous/Next navigation #}
         {% if _globals.get('pageNav') %}
             <div class="max-w-screen-xl mx-auto">
-                {% include '@templates/_layouts/partials/page-nav.twig' with {
+                {% include '_layouts/partials/page-nav.twig' with {
                     page,
                     prev: _globals.get('prev'),
                     next: _globals.get('next')
@@ -115,7 +115,7 @@
         {% endif %}
 
         {# The page footer #}
-        {% include '@templates/_layouts/partials/footer.twig' %}
+        {% include '_layouts/partials/footer.twig' %}
     {% endblock %}
 
     </body>

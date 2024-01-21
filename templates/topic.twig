@@ -3,7 +3,7 @@
 {# @param page page #}
 {# @param posts [Page] #}
 
-{% extends "@templates/_layouts/main.twig" %}
+{% extends "_layouts/main.twig" %}
 
 {% do _globals.set({
     featuredImage: latestPost ? latestPost.featuredImage.toFile() : null,
@@ -14,13 +14,13 @@
 {% block content %}
     
     {# Show parent/children #}
-    {% include '@templates/_sections/topic/hierarchy.twig' with {
+    {% include '_sections/topic/hierarchy.twig' with {
         page
     } only %}
 
     {{ parent() }}
 
-    {% include '@templates/_partials/pages-cards.twig' with {
+    {% include '_partials/pages-cards.twig' with {
         pages: posts,
         pagination
     } only %}

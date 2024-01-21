@@ -8,7 +8,7 @@ The kebap filter converts a value into a better suitable filename here, e.g tabl
 {# @param block Block #}
 {# @param blocks [Blocks] #}
 
-{% include "@templates/_blocks/special/#{block.blockType|kebab}.twig" with {
+{% include "_blocks/special/#{block.blockType|kebab}.twig" with {
     blocks,
     block
 } only  %}

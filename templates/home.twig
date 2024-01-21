@@ -3,14 +3,14 @@
 {# @param page page #}
 {# @param posts Collection #}
 
-{% extends "@templates/_layouts/main.twig" %}
+{% extends "_layouts/main.twig" %}
 
 {% block content %}
 
     {{ parent() }}
 
     {# Just a list of new posts #}
-    {% include '@templates/_partials/pages-list.twig' with {
+    {% include '_partials/pages-list.twig' with {
         heading: 'New Posts'|t,
         pages: posts
     } only %}

@@ -4,7 +4,7 @@
 {# @param searchQuery string URL parameter q #}
 {# @param posts [Page] #}
 
-{% extends "@templates/_layouts/main.twig" %}
+{% extends "_layouts/main.twig" %}
 
 {# Use wide layout #}
 {% do _globals.set({
@@ -31,7 +31,7 @@
                value="{{ searchQuery }}">
 
 
-        {% include '@templates/_partials/button.twig' with {
+        {% include '_partials/button.twig' with {
             caption: 'Start'|t,
             type: 'submit'
         } only %}
@@ -47,7 +47,7 @@
                 {# {{ '{count,plural,=1{search result} other{search results}}'|t({count: count}) }} #}
             </h2>
 
-            {% include '@templates/_partials/pages-cards.twig' with {
+            {% include '_partials/pages-cards.twig' with {
                 pages: posts
             } only %}
         {% else %}

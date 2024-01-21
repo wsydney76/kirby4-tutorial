@@ -6,12 +6,12 @@
 {% if pages.isNotEmpty %}
 
     {# Use embed for consistent grid layout #}
-    {% embed '@templates/_layouts/partials/cards.twig' %}
+    {% embed '_layouts/partials/cards.twig' %}
         {% block content %}
             {% for page in pages %}
 
                 {# Use embed for consistent card layout #}
-                {% embed '@templates/_layouts/partials/card.twig' with {
+                {% embed '_layouts/partials/card.twig' with {
                     image: page.featuredImage.toFile() ?? site.featuredImage.toFile(),
                     url: page.url,
                     page
@@ -39,7 +39,7 @@
 
 
     {# Show pagination nav. #}
-    {% include '@templates/_layouts/partials/pagination.twig' %}
+    {% include '_layouts/partials/pagination.twig' %}
 
 {% else %}
     <div>
