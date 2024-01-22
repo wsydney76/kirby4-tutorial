@@ -1,0 +1,21 @@
+# For now, this is a copy of Kirby's default quote block, avoiding the extra fields of the custom quote block.
+# TODO: extend from Kirby's default quote block??
+name: field.blocks.quote.name
+icon: quote
+wysiwyg: true
+preview: quote
+fields:
+  text:
+    label: field.blocks.quote.text.label
+    placeholder: field.blocks.quote.text.placeholder
+    type: writer
+    inline: true
+    icon: quote
+  citation:
+    label: field.blocks.quote.citation.label
+    placeholder: field.blocks.quote.citation.placeholder
+    type: writer
+    inline: true
+    icon: user
+
+

@@ -1,0 +1,34 @@
+label: Layouts
+type: layout
+layouts:
+  - "1/1"
+  - "1/2, 1/2"
+  - "1/3, 1/3, 1/3"
+  - "1/3, 2/3"
+  - "2/3, 1/3"
+fieldsets:
+  - text
+  - heading
+  - layoutImage
+  - coverImage
+  - layoutQuote
+  - special
+  - contact
+settings:
+  fields:
+    class:
+      label: Background
+      type: select
+      width: 1/3
+      options:
+        none: None
+        bg-layout-light: Light
+        bg-layout-dark: Dark
+    id:
+      type: text
+      width: 1/2
+      help: Ignored right now
+    image:
+      label: Background image
+      type: files
+      help: Ignored right now

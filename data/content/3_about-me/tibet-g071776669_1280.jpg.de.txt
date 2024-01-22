@@ -6,12 +6,8 @@ Copyright: Pixabay
 
 ----
 
-Uuid: xtQOpvSfKGvfO2Cm
-
-----
-
 Template: image
 
 ----
 
-Sort: 3
+Sort: 4

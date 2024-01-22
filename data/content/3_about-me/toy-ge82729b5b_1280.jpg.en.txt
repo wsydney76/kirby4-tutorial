@@ -11,3 +11,11 @@ Uuid: V8CUMYThnnIRMazm
 ----
 
 Template: image
+
+----
+
+Sort: 4
+
+----
+
+Focus: 65.6% 38.7%

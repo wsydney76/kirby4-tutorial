@@ -19,3 +19,7 @@ Uuid: Wr7jPuSXCnNFlEEF
 ----
 
 Template: image
+
+----
+
+Sort: 1

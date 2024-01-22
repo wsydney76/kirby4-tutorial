@@ -39,5 +39,13 @@ export default {
   plugins: [
     require('@tailwindcss/typography'),
   ],
+
+  safelist: [
+    {
+      pattern: /col-span-(1|2|3|4|5|6|7|8|9|10|11|12)/
+    },
+    'bg-layout-light',
+    'bg-layout-dark',
+  ]
 }
 

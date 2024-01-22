@@ -20,7 +20,7 @@ Bodycontent:
     {
         "content": {
             "text": "Playing dead not only comes in handy when face to face with a bear, but also at important business meetings.",
-            "cite": "Jack Handey",
+            "citation": "Jack Handey",
             "style": "default"
         },
         "id": "b8eacc4d-7cfa-4a11-83de-007d387e482f",

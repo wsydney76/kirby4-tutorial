@@ -1,0 +1,20 @@
+title: Layout page
+
+columns:
+  main:
+    width: 3/4
+    sections:
+      fields:
+        type: fields
+        fields:
+
+          layout: fields/layout
+  sidebar:
+    width: 1/4
+    sections:
+      common:
+        type: fields
+        fields:
+          featuredImage: fields/featuredImage
+      files: sections/files
+

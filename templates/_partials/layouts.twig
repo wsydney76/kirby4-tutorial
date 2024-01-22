@@ -1,0 +1,59 @@
+{# Max width 1280px, breakpoint at 1024px, below that: full width, above column size #}
+
+{# TODO: This is copied from another project, so calculation of breakpoints/sizes have to be adjusted #}
+
+{% set maxWidth = 1280 %}
+{% set breakpoint = 1024 %}
+{% set baseWidths = [400, 640, 1024] %}
+{% set baseSizes = baseWidths|map(s => "(max-width: #{s}px) #{s}px")|join(', ') %}
+{% set fullWidthSizes = {
+    '12': 1280,
+    '3': 400,
+    '4': 640,
+    '6': 640,
+    '8': 1024,
+    '9': 1024,
+} %}
+HUHU
+<div class="space-y-12">
+    {% for layout in field.toLayouts %}
+        {% set class = layout.attrs.class ?? '' %}
+
+        <section class="grid max-w-none grid-cols-1 gap-12 lg:grid-cols-12 {{ class }}">
+
+            {% for column in layout.columns %}
+
+                <div class="col-span-{{ column.span }} prose prose-lg max-w-none">
+
+                    {% for block in column.blocks %}
+                        {% if block.type == 'layoutImage' %}
+                            {% set widths = baseWidths %}
+                            {% set width = maxWidth / 12 * column.span %}
+                            {% if width > breakpoint %}
+                                {% set widths = baseWidths|merge([maxWidth]) %}
+                            {% endif %}
+
+                            {# number_format will cast to integer, float will throw error #}
+                            {% include "_blocks/image.twig" with {
+                                block,
+                                transform: {width: width|number_format, height: (width/4*3)|number_format},
+                                style: ['fullHeight'],
+                                widths,
+                                sizes: "#{baseSizes}, #{fullWidthSizes[column.span]}px"
+                            } only %}
+                        {% else %}
+                            {% include "_blocks/#{block.type}.twig" with {
+                                blocks: column.blocks,
+                                block
+                            } only %}
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+
+            {% endfor %}
+
+        </section>
+    {% endfor %}
+</div>
+

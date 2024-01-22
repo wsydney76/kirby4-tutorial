@@ -13,9 +13,9 @@
                 {# There is a <q> element, but that is not intended for use inside a <blockquote> #}
                 {{ '“'|t }}{{ block.text|nl2br }}{{ '”'|t }}
             </div>
-            {% if block.cite %}
+            {% if block.citation %}
                 <cite class="block mt-8 text-lg italic">
-                    {{ block.cite }}
+                    {{ block.citation }}
                 </cite>
             {% endif %}
         </blockquote>
@@ -25,9 +25,9 @@
             <div class="font-semibold font-serif text-lg  text-gray-600">
                 {{ '“'|t }}{{ block.text|nl2br }}{{ '”'|t }}
             </div>
-            {% if block.cite %}
+            {% if block.citation %}
                 <cite class="block mt-4 text-lg text-prose italic">
-                    {{ block.cite }}
+                    {{ block.citation }}
                 </cite>
             {% endif %}
         </blockquote>

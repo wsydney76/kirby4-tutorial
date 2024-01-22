@@ -1,9 +1,9 @@
-/*
+
 :root {
   --menu-color-back: #E4EDF6;
   --color-light: #F3F7FC;
 }
-
+/*
 .k-block-container:not(:last-of-type) {
   border-bottom-color: #666666;
   border-bottom-style: dotted;

@@ -1,0 +1,11 @@
+{% extends "_layouts/main.twig" %}
+
+{% do _globals.set({
+    mainWidth: 'xl'
+}) %}
+
+{% block content %}
+    {% include '_partials/layouts.twig' with {
+    	field: page.layout
+    } only %}
+{% endblock %}

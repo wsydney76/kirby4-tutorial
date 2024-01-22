@@ -1,0 +1,6 @@
+name:
+  en: Contact
+  de: Kontakt
+icon: user
+fields:
+  contact: fields/contact

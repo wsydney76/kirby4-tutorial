@@ -1,0 +1,12 @@
+type: object
+label:
+  en: Contact data
+  de: Kontaktdaten
+fields:
+  photo: fields/singleImage
+  name:
+    type: text
+  email:
+    type: email
+  phone:
+    type: tel

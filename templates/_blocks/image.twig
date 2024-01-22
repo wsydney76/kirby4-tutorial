@@ -3,10 +3,14 @@
 {% from '_macros/lib.twig' import img %}
 
 {% set image = block.image.toFile() %}
-{% set style = block.style.split() %}
+{% set style = style ?? block.style.split() %}
 
 {% set wide = 'wide' in style %}
 {% set fullHeight = 'fullHeight' in style %}
+
+{% if transform is not defined %}
+    {% set transform = wide ? {width: 1024, height: fullHeight ? null : 440} : {width: 825, height: fullHeight ? null : 350} %}
+{% endif %}
 
 {% if image %}
     {# Apply negative margin for images with 'wide' style on larger screens #}
@@ -15,7 +19,7 @@
         {# Adjust transforms based on block attributes #}
         {# TODO: Check srcsets #}
         {{ img(image, {
-            transform: wide ? {width: 1024, height: fullHeight ? null : 440} : {width: 825, height: fullHeight ? null : 350},
+            transform,
             scrset: wide ?  [1024, 825, 400] : null
         }) }}
 

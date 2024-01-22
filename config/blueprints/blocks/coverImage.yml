@@ -1,0 +1,13 @@
+name:
+  en: Cover Image
+  de: Cover-Bild
+icon: image
+wysiwyg: true
+# other preview values can break the layout, so we'll just use the image field's preview
+preview: image
+fields:
+  image:
+    extends: fields/singleImage
+    help:
+      en: This image will be expanded to fill the full height of this column. Should be the only image in this column.
+      de: Dieses Bild wird auf die volle Höhe dieser Spalte erweitert. Sollte das einzige Bild in dieser Spalte sein.

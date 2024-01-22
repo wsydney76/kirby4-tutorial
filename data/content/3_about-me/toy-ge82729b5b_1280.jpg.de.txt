@@ -7,3 +7,11 @@ Copyright: Pixabay
 ----
 
 Template: image
+
+----
+
+Sort: 5
+
+----
+
+Focus: 65.6% 38.7%

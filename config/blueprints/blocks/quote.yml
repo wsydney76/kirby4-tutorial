@@ -4,10 +4,10 @@ wysiwyg: true
 preview: fields
 fields:
   text: fields/text
-  cite:
+  citation:
     extends: fields/text
     label:
-        en: Cite
+        en: Citation
         de: Quelle
     width: 3/4
   style:
