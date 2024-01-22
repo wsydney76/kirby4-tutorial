@@ -90,6 +90,7 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
         return Collection::make($items);
     }
 
+    // TODO: Use php (or twig) intl extension for date formatting
     public function dateFunction($date, $format = null)
     {
         $languageCode = kirby()->language()->code();
@@ -110,8 +111,8 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
             return $date->toDate($format);
         }
 
-        if ($date instanceof DateTime) {
-            return $date->format($format);
+        if (!$date instanceof DateTime) {
+            throw new \RuntimeException('Invalid date', 400);
         }
         return $date->format($format);
     }
