@@ -96,11 +96,7 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
         $languageCode = kirby()->language()->code();
 
         if ($format && $format === 'short') {
-            if ($languageCode === 'de') {
-                $format = 'd.m.Y';
-            } else {
-                $format = 'm/d/Y';
-            }
+            $format = kirby()->site()->shortDateFormat()->or('d.m.Y');
         }
 
         if (is_string($date) === true) {

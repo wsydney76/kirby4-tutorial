@@ -2,12 +2,8 @@ Title: Kirby Tutorial
 
 ----
 
-Featuredimage: - file://mYbxAWXTlBfu9126
-
-----
-
 Copyright: Perlen vor die Säue GmbH
 
 ----
 
-Shortdateformat: m/d/Y
+Shortdateformat: d.m.Y

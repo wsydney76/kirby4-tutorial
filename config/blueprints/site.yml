@@ -1,7 +1,30 @@
 title: Site
+tabs:
+  - label:
+      en: Content
+      de: Inhalt
+    columns:
+      - width: 2/3
+        sections:
+          posts:
+            extends: sections/posts
+            label:
+              en: Latest posts
+              de: Neueste Beiträge
+            limit: 6
+            size: huge
+            parent: kirby.page("posts")
 
-columns:
-  - width: 2/3
+      - width: 1/3
+        sections:
+          home: sections/home
+          pages: sections/pages
+          topics: sections/topics
+          files: sections/files
+
+  - label:
+      en: Settings
+      de: Einstellungen
     sections:
       fields:
         type: fields
@@ -11,25 +34,24 @@ columns:
             help:
               en: The image that will be used as a fallback.
               de: Das Bild, das als Fallback verwendet wird.
-            width: 1/2
+            width: 1/4
+          gap1:
+            type: gap
+            width: 3/4
           copyright:
             extends: fields/text
             label: Copyright
-            width: 1/2
-      posts:
-        extends: sections/posts
-        label:
-          en: Latest posts
-          de: Neueste Beiträge
-        limit: 6
-        size: huge
-        parent: kirby.page("posts")
-
-  - width: 1/3
-    sections:
-      home: sections/home
-      pages: sections/pages
-      topics: sections/topics
-      files: sections/files
-
+            width: 1/4
+          gap2:
+            type: gap
+            width: 3/4
+          shortDateFormat:
+            extends: fields/text
+            width: 1/4
+            label:
+              en: Short date format
+              de: Kurzes Datumsformat
+            help:
+              en: The format that will be used for the date for posts.
+              de: Das Format, das für das Datum in Beiträgen verwendet wird.
 
