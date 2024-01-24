@@ -2,5 +2,5 @@ type: pages
 label:
   en: Topics
   de: Themen
-create: false
+create: true
 query: page('topics').index

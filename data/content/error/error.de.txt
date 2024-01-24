@@ -2,7 +2,7 @@ Title: Fehler
 
 ----
 
-Text: <p>Something went wrong....</p>
+Text: Es ist etwas schiefgelaufen....
 
 ----
 

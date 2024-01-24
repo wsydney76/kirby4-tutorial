@@ -14,7 +14,7 @@ Template: image
 
 ----
 
-Sort: 4
+Sort: 6
 
 ----
 

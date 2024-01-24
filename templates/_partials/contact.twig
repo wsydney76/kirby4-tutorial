@@ -1,0 +1,43 @@
+{% from '_macros/lib.twig' import img %}
+
+{% if contact.isNotEmpty %}
+    {% set contact = contact.toObject() %}
+
+    <section class="not-prose space-y-2">
+
+        {% if heading is defined %}
+            <h3 class="font-semibold text-xl mt-4 mb-2">{{ heading }}</h3>
+        {% endif %}
+
+        {% set image = contact.photo.toFile %}
+
+        <div class="flex items-center">
+            {% if image %}
+                <div>
+                    {{ img(image, {
+                        transform: {width: 60, ratio: '1/1'},
+                        attr: {class: 'rounded-full mr-4'}
+                    }) }}
+                </div>
+            {% endif %}
+
+            {% if contact.name.isNotEmpty %}
+                <div class="font-bold">
+                    {{ contact.name }}
+                </div>
+            {% endif %}
+        </div>
+
+        {% if contact.email.isNotEmpty %}
+            <div>
+                {{ contact.email|email }}
+            </div>
+        {% endif %}
+
+        {% if contact.phone.isNotEmpty %}
+            <div>
+                {{ contact.phone|tel }}
+            </div>
+        {% endif %}
+    </section>
+{% endif %}

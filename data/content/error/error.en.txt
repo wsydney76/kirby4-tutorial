@@ -6,7 +6,7 @@ Featuredimage: - file://D8qctCOTyg1TOASD
 
 ----
 
-Text: <p>Something went wrong....</p>
+Text: Something went wrong....
 
 ----
 

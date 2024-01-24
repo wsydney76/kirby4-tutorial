@@ -22,4 +22,6 @@ return [
     'Published on' => 'Veröffentlicht am',
     'by' => 'von',
     'Topic' => 'Thema',
+    'Addresses' => 'Adressen',
+    'Contact' => 'Kontakt',
 ];

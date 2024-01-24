@@ -1,0 +1,54 @@
+label:
+    en: Addresses
+    de: Adressen
+type: structure
+empty:
+  en: No addresses yet
+  de: Noch keine Adressen
+fields:
+  label:
+    extends: fields/text
+    label:
+      en: Label
+      de: Bezeichnung
+    required: true
+  country:
+    extends: fields/text
+    label:
+      en: Country
+      de: Land
+  addressLine1:
+    extends: fields/text
+    label:
+      en: Address Line 1
+      de: Adresszeile 1
+    required: true
+  addressLine2:
+    extends: fields/text
+    label:
+      en: Address Line 2
+      de: Adresszeile 2
+  zip:
+    extends: fields/text
+    label:
+      en: ZIP Code
+      de: Postleitzahl
+    width: 1/4
+  city:
+    extends: fields/text
+    label:
+      en: City
+      de: Stadt
+    width: 3/4
+    required: true
+  contact: fields/contact
+
+columns:
+  label:
+    width: 1/4
+  addressLine1:
+    width: 1/4
+  addressLine2:
+    width: 1/4
+  city:
+    width: 1/4

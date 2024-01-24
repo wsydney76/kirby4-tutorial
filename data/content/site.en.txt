@@ -1,4 +1,8 @@
-Title: Kirby Tutorial
+Title: Kirby Tutorial - Dashboard
+
+----
+
+Sitename: Kirby Tutorial
 
 ----
 

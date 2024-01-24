@@ -2,5 +2,6 @@ name:
   en: Contact
   de: Kontakt
 icon: user
+label: "{{contact.name}}"
 fields:
   contact: fields/contact

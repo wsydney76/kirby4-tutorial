@@ -23,5 +23,8 @@ class CustomPage extends DefaultPage
     public Field $featuredImage;
     public Field $topics;
 
+    public Field $layout;
+    public Field $addresses;
+
 
 }

@@ -8,4 +8,9 @@
     {% include '_partials/layouts.twig' with {
     	field: page.layout
     } only %}
+
+    {% include '_partials/addresses.twig' with {
+        field: page.addresses
+    } %}
+
 {% endblock %}

@@ -19,7 +19,12 @@ columns:
         fields:
           featuredImage: fields/featuredImage
           author: fields/author
-          date: fields/date
+          date:
+            extends: fields/date
+            label:
+              en: Post date
+              de: Beitragsdatum
+            required: true
           topics: fields/topics
       files: sections/files
 

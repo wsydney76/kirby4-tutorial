@@ -1,0 +1,16 @@
+title: Error page
+
+columns:
+  main:
+    width: 1/3
+    sections:
+      fields:
+        type: fields
+        fields:
+          featuredImage: fields/featuredImage
+          text:
+            extends: fields/text
+            help:
+              en: A generic error message,
+              de: Eine generische Fehlermeldung
+

@@ -1,11 +1,20 @@
 title: Site
 tabs:
   - label:
-      en: Content
-      de: Inhalt
+      en: Site content
+      de: Site Inhalt
     columns:
       - width: 2/3
         sections:
+          fieldsPosts:
+            type: fields
+            fields:
+              headlinePosts:
+                type: headline
+                label:
+                  en: Posts
+                  de: Beiträge
+          stats: sections/postStats
           posts:
             extends: sections/posts
             label:
@@ -17,41 +26,72 @@ tabs:
 
       - width: 1/3
         sections:
+          fieldsOther:
+            type: fields
+            fields:
+              headlineOther:
+                type: headline
+                label:
+                  en: Other pages
+                  de: Andere Seiten
           home: sections/home
           pages: sections/pages
           topics: sections/topics
-          files: sections/files
 
   - label:
-      en: Settings
-      de: Einstellungen
-    sections:
-      fields:
-        type: fields
-        fields:
-          featuredImage:
-            extends: fields/featuredImage
-            help:
-              en: The image that will be used as a fallback.
-              de: Das Bild, das als Fallback verwendet wird.
-            width: 1/4
-          gap1:
-            type: gap
-            width: 3/4
-          copyright:
-            extends: fields/text
-            label: Copyright
-            width: 1/4
-          gap2:
-            type: gap
-            width: 3/4
-          shortDateFormat:
-            extends: fields/text
-            width: 1/4
-            label:
-              en: Short date format
-              de: Kurzes Datumsformat
-            help:
-              en: The format that will be used for the date for posts.
-              de: Das Format, das für das Datum in Beiträgen verwendet wird.
+      en: Site wide settings
+      de: Site Einstellungen
+    columns:
+      - width: 1/3
+        sections:
+          fieldsCommon:
+            type: fields
+            fields:
+              headlineCommon:
+                type: headline
+                label:
+                  en: Common content
+                  de: Allgemeiner Inhalt
+              siteName:
+                extends: fields/text
+                label:
+                  en: Site name
+                  de: Name der Site
+              featuredImage:
+                extends: fields/featuredImage
+                help:
+                  en: The image that will be used as a fallback.
+                  de: Das Bild, das als Fallback verwendet wird.
+              copyright:
+                extends: fields/text
+                label: Copyright
 
+      - width: 1/3
+        sections:
+          fieldsSystemSettings:
+            type: fields
+            fields:
+              headlineSystemSettings:
+                type: headline
+                label:
+                  en: System settings
+                  de:
+              shortDateFormat:
+                extends: fields/text
+                label:
+                  en: Short date format
+                  de: Kurzes Datumsformat
+                help:
+                  en: The format that will be used for the date for posts.
+                  de: Das Format, das für das Datum in Beiträgen verwendet wird.
+      - width: 1/3
+        sections:
+          fieldsFiles:
+            type: fields
+            fields:
+              headlineFiles:
+                type: headline
+                label:
+                  en: Files
+                  de: Dateien
+          files: sections/files

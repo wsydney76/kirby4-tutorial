@@ -1,0 +1,25 @@
+type: stats
+label:
+  en: Posts stats
+  de: Beitragsstatistik
+reports:
+  - label: Draft(s)
+    value: "{{ site.find('posts').drafts.count }}"
+    link: pages/posts
+    info:
+      en: Needs attention!
+      de: Muss noch bearbeitet werden!
+    theme: negative
+  - label: Unlisted
+    value: "{{ site.find('posts').children.unlisted.count }}"
+    link: pages/posts
+    info:
+      en: Hidden
+      de: Versteckt
+  - label: Listed
+    value: "{{ site.find('posts').children.listed.count }}"
+    link: pages/posts
+    info:
+      en: Published
+      de: Veröffentlicht
+    theme: positive

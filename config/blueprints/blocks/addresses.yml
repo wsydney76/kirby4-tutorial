@@ -1,0 +1,6 @@
+name:
+  en: Addresses
+  de: Adressen
+icon: user
+fields:
+  contact: fields/addresses

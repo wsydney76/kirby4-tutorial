@@ -1,4 +1,8 @@
-Title: Kirby Tutorial
+Title: Übersicht
+
+----
+
+Sitename: Kirby Tutorial
 
 ----
 

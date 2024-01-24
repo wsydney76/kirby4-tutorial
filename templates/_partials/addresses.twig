@@ -1,0 +1,47 @@
+{% set addresses = field.toStructure() %}
+
+{% if addresses.isNotEmpty %}
+
+    <h2 class="mt-8 font-semibold text-2xl">{{ 'Addresses'|t }}</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+
+        {% for address in addresses %}
+            <div>
+                {% embed '_layouts/partials/box.twig' %}
+                    {% block content %}
+
+                        {% if address.label.isNotEmpty %}
+                            <div class="font-bold text-xl mb-4">
+                                {{ address.label }}
+                            </div>
+                        {% endif %}
+
+                        <div>
+                            {{ address.addressLine1 }}
+                        </div>
+                        <div>
+                            {{ address.addressLine2 }}
+                        </div>
+                        <div>
+                            {{ address.zip }} {{ address.city }}
+                        </div>
+
+                        <div>
+                            {{ address.country }}
+                        </div>
+
+                        <div>
+                            {% include '_partials/contact.twig' with {
+                                contact: address.contact,
+                                heading: 'Contact'|t
+                            } only %}
+                        </div>
+
+                    {% endblock %}
+                {% endembed %}
+            </div>
+        {% endfor %}
+
+    </div>
+{% endif %}

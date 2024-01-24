@@ -1,0 +1,13 @@
+Title: Ein nicht aufgelisteter Beitrag
+
+----
+
+Slug: ein-nicht-aufgelisteter-beitrag
+
+----
+
+Subheading: Nicht aufgelistete Beiträge sind nur über ihre URLs verfügbar.
+
+----
+
+Bodycontent: 

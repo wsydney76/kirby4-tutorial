@@ -6,8 +6,8 @@ template: post
 layout: cards
 size: large
 search: true
+flip: true
 info: '<br>{{page.subheading}}<br><br>{{page.date}}'
-sortBy: date desc
 image:
   field: featuredImage
   cover: true

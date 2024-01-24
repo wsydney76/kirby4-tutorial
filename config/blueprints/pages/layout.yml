@@ -7,8 +7,8 @@ columns:
       fields:
         type: fields
         fields:
-
           layout: fields/layout
+          addresses: fields/addresses
   sidebar:
     width: 1/4
     sections:

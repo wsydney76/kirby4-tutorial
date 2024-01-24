@@ -14,6 +14,7 @@ fieldsets:
   - layoutQuote
   - special
   - contact
+  - addresses
 settings:
   fields:
     class:
