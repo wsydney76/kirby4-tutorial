@@ -39,7 +39,7 @@ tabs:
           topics: sections/topics
 
   - label:
-      en: Site wide settings
+      en: Site-wide settings
       de: Site Einstellungen
     columns:
       - width: 1/3

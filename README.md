@@ -13,6 +13,8 @@ Trying to make it easier for devs to switch between Craft and Kirby.
 * Reorganized directory structure
 * Find custom config and translations in familiar places
 * Autocomplete in PhpStorm, including field names (needs manual config, so may be worth it or not...)
+* Demo field types that have no direct equivalent in Craft core (Object, Structure, Layout).
+* Make use of .env file for configuration
 
 ## Installation
 
@@ -37,6 +39,19 @@ Untested...
 * Run `cp .env.example .env`
 * Run `npm install && npm run build`
 
+## Environment Variables
+
+Just one in `.env` for now:
+
+`ENVIRONMENT=dev` 
+
+* enables debugging and disables twig template caching. A bit slower.
+
+
+`ENVIRONMENT=production` 
+
+* disables debugging and enables twig template caching. Faster, but you have to clear the `storage/cache/twig` folder after each update of twig templates.
+
 ## Screenshots
 
 ### Frontend
@@ -48,6 +63,7 @@ Untested...
 ### Backend
 
 ![Screenshot Dashboard](/screenshot-dashboard.jpg)
+![Screenshot Dashboard](/screenshot-dashboard2.jpg)
 
 ![Screenshot Posts](/screenshot-posts-backend.jpg)
 
