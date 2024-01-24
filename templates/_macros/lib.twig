@@ -7,6 +7,8 @@ with a lot of options, or when delivering different formats.
 However, images should always be output via a macro and not by using 'image.img()'
 #}
 
+{# TODO: Fix responsive sizes #}
+
 {% macro img(image, params = []) %}
 
     {% set width = params.transform.width ?? null %}

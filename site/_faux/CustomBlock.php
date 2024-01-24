@@ -23,6 +23,7 @@ class CustomBlock extends Page
     public Field $image;
     public Field $style;
     public string $cite;
+    public Field $contact;
 
 
 }
