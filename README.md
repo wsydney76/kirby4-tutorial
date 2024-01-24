@@ -71,3 +71,5 @@ Just one in `.env` for now:
 
 ![Screenshot Post](/screenshot-post2-backend.jpg)
 
+![Screenshot Layout field](/screenshot-layout.jpg)
+
