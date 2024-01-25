@@ -18,7 +18,7 @@ return function ($page, $pages) {
 
     $descendants = $page->index();
 
-    $posts = $pages->find('posts')->children()->filter(function($post) use ($page, $descendants) {
+    $posts = collection('posts')->filter(function($post) use ($page, $descendants) {
 
         foreach ($descendants as $descendant) {
             if ($post->topics()->toPages()->has($descendant)) {
