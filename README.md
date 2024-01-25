@@ -73,3 +73,8 @@ Just one in `.env` for now:
 
 ![Screenshot Layout field](/screenshot-layout.jpg)
 
+## TODOS
+
+A lot.
+
+For now, this does not handle responsive images. Needs more in-depth knowledge of Kirby's image handling, so skipped this for now instead of doing it wrong.

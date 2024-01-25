@@ -10,9 +10,7 @@
 
         {# Do not lazy load, it will always be above the fold #}
         {{ img(image, {
-            transform: {width: 1280, height: 450},
-            srcset: [1200, 768, 480],
-            attr: {loading: null, fetchpriority: 'high'}
+            transform: {width: 1200, height: 450},
         }) }}
 
         {# Show copyright on an overlay #}

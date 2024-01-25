@@ -5,64 +5,34 @@ especially when using a third party plugin like imager-x
 with a lot of options, or when delivering different formats.
 
 However, images should always be output via a macro and not by using 'image.img()'
+
+TODO: This is for now a basic implemention without handling responsive images
+    see https://getkirby.com/docs/cookbook/performance/responsive-images
 #}
 
-{# TODO: Fix responsive sizes #}
 
-{% macro img(image, params = []) %}
+{% macro img(image, params = {}) %}
 
-    {% set width = params.transform.width ?? null %}
-    {% set widths = width %}
+    {% set params = {
+        mode: 'crop',
+        class: '',
+    } | merge(params) %}
 
-    {% set mode = params.mode ?? 'crop' %}
-    {% set loading = params.attr.loading ?? 'lazy' %}
-    {% set class = params.attr.class ?? '' %}
-    {% set sizes = params.attr.sizes ?? '' %}
-
-    {% if widths is not iterable %}
-        {% set widths = [widths] %}
+    {% if params.mode == 'crop' and params.transform.height is defined %}
+        {% set transformedImage = image.crop(params.transform.width, params.transform.height) %}
+    {% elseif params.transform.width is defined %}
+        {% set transformedImage = image.resize(params.transform.width) %}
+    {% else %}
+        {% set transformedImage = image %}
     {% endif %}
 
-    {% set images = [] %}
-    {% set maxWidth = 0 %}
-    {% set maxHeight = 0 %}
-    {% set srcset = '' %}
-
-    {% for width in widths %}
-        {% if params.transform.ratio is defined and params.transform.ratio %}
-            {% set ratio = params.transform.ratio|split('/') %}
-            {% set height = (width / ratio[0] * ratio[1])|round %}
-        {% else %}
-            {% set height = params.transform.height ?? null %}
-        {% endif %}
-
-        {% if mode == 'resize' %}
-            {% set transformedImage = image.resize(width, height) %}
-        {% else %}
-            {% set transformedImage = image.crop(width, height) %}
-        {% endif %}
-
-        {% set images = images|merge([transformedImage]) %}
-        {% set maxHeight = max(maxHeight, height) %}
-        {% set maxWidth = max(maxWidth, width) %}
-        {% if widths|length > 1 %}
-
-            {% set srcset = srcset ~ "#{transformedImage.url} #{width}w#{not loop.last ? ', '}"  %}
-        {% endif %}
-    {% endfor %}
-
-
-
-
+    
     <img {{ attr({
-        alt: images[0].alt|e('html_attr'),
-        class: class,
-        src: images[0].url,
-        width: maxWidth,
-        height: maxHeight,
-        srcset: srcset,
-        sizes: sizes,
-        loading: loading ? loading : null
+        alt: image.alt|e('html_attr'),
+        class: params.class,
+        src: transformedImage.url,
+        width: transformedImage.width,
+        height: transformedImage.height,
     }) }}>
 
 {% endmacro %}

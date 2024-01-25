@@ -9,7 +9,10 @@
 {% set fullHeight = 'fullHeight' in style %}
 
 {% if transform is not defined %}
-    {% set transform = wide ? {width: 1024, height: fullHeight ? null : 440} : {width: 825, height: fullHeight ? null : 350} %}
+    {% set transform = wide ?
+        {width: 960, height: fullHeight ? null : 440} :
+        {width: 768, height: fullHeight ? null : 350}
+    %}
 {% endif %}
 
 {% if image %}
@@ -19,8 +22,7 @@
         {# Adjust transforms based on block attributes #}
         {# TODO: Check srcsets #}
         {{ img(image, {
-            transform,
-            scrset: wide ?  [1024, 825, 400] : null
+            transform
         }) }}
 
         {# Add caption if one of caption or image copyright is present #}

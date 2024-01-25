@@ -3,9 +3,8 @@
 namespace site\_faux;
 
 use Kirby\Cms\File;
-use Kirby\Cms\Page;
 
-class CustomFile extends Page
+class CustomFile extends File
 {
     public string $headline;
     public string $subheadline;
@@ -20,6 +19,7 @@ class CustomFile extends Page
     public string $copyright;
     public $date;
     public File $cover;
+    public string $alt;
 
 
 }
