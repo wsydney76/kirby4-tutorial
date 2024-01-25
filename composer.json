@@ -1,6 +1,7 @@
 {
   "name": "wsydney76/kirby4-tutorial",
   "description": "Kirby 4 Tutorial",
+  "version": "1.0.1",
   "type": "project",
   "keywords": [
     "kirby",
