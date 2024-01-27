@@ -77,4 +77,4 @@ Just one in `.env` for now:
 
 A lot.
 
-For now, this does not handle responsive images. Needs more in-depth knowledge of Kirby's image handling, so skipped this for now instead of doing it wrong.
+For now, there is only a PoC level handling of responsive images. Needs more in-depth knowledge of Kirby's image handling.
