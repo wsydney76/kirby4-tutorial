@@ -38,8 +38,10 @@ return [
 
     // Create thumbs in webp format
     'thumbs' => [
-        'format' => 'webp'
+        'format' => 'webp',
     ],
+
+
 
     // Enable custom twig extension
     'wearejust.twig.env.extensions' => [

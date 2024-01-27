@@ -41,6 +41,7 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
         return [
             '_globals' => Collection::make(),
             'now' => new DateTime(),
+            'customConfig' => kirby()->option('custom'),
         ];
     }
 
@@ -50,6 +51,7 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
             new TwigFunction('a', [$this, 'aFunction'],['is_safe' => ['html']]),
             new TwigFunction('attr', [$this, 'attrFunction']),
             new TwigFunction('collect', [$this, 'collectFunction']),
+            new TwigFunction('customOption', [$this, 'customOptionFunction']),
             new TwigFunction('dd', [$this, 'dumpAndDieFunction']),
             new TwigFunction('email', [$this, 'emailFunction']),
             new TwigFunction('tel', [$this, 'telFunction'],['is_safe' => ['html']]),
@@ -88,6 +90,11 @@ class SiteExtension extends AbstractExtension implements GlobalsInterface
     public function collectFunction($items)
     {
         return Collection::make($items);
+    }
+
+    public function customOptionFunction($option)
+    {
+        return kirby()->option('custom.' . $option);
     }
 
     // TODO: Use php (or twig) intl extension for date formatting

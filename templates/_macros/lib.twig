@@ -6,8 +6,6 @@ with a lot of options, or when delivering different formats.
 
 However, images should always be output via a macro and not by using 'image.img()'
 
-TODO: This is for now a basic implemention without handling responsive images
-    see https://getkirby.com/docs/cookbook/performance/responsive-images
 #}
 
 
@@ -15,8 +13,16 @@ TODO: This is for now a basic implemention without handling responsive images
 
     {% set params = {
         mode: 'crop',
-        class: '',
+        srcset: null,
+        attr: {},
+        
     } | merge(params) %}
+
+    {% set attr = {
+        loading: 'lazy',
+        class: null,
+        srcset: params.srcset ? image.srcset(params.srcset) : null,
+    }|merge(params.attr) %}
 
     {% if params.mode == 'crop' and params.transform.height is defined %}
         {% set transformedImage = image.crop(params.transform.width, params.transform.height) %}
@@ -26,14 +32,12 @@ TODO: This is for now a basic implemention without handling responsive images
         {% set transformedImage = image %}
     {% endif %}
 
-    
-    <img {{ attr({
-        alt: image.alt|e('html_attr'),
-        class: params.class,
-        src: transformedImage.url,
-        width: transformedImage.width,
-        height: transformedImage.height,
-    }) }}>
+
+    <img src="{{ transformedImage.url }}"
+         alt="{{ image.alt|e('html_attr') }}"
+         width="{{ transformedImage.width }}"
+         height="{{ transformedImage.height }}"
+        {{ attr(attr) }}>
 
 {% endmacro %}
 

@@ -7,10 +7,11 @@
 
 {% if image %}
     <figure class="my-8 relative">
-
         {# Do not lazy load, it will always be above the fold #}
         {{ img(image, {
-            transform: {width: 1200, height: 450},
+            transform: customConfig.transforms.featuredImage,
+            srcset: customConfig.srcsets.featuredImage,
+            attr: {loading: null, fetchpriority: 'high'}
         }) }}
 
         {# Show copyright on an overlay #}

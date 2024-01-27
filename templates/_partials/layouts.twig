@@ -1,31 +1,23 @@
-{# TODO: This does not handle responsive images for now #}
-
 <div class="space-y-12">
     {% for layout in field.toLayouts %}
         {% set class = layout.attrs.class ?? '' %}
 
-        <section class="grid max-w-none grid-cols-1 gap-12 lg:grid-cols-12 {{ class }}">
+        {# Grid layout for wider screens #}
+        <section class="grid grid-cols-1 gap-12 lg:grid-cols-12 {{ class }}">
 
             {% for column in layout.columns %}
 
-                <div class="col-span-{{ column.span }} prose prose-lg max-w-none">
+                <div class="lg:col-span-{{ column.span }} prose prose-lg max-w-none">
 
                     {% for block in column.blocks %}
-                        {% if block.type == 'layoutImage' %}
 
-                            {# This requires full width for small screens, where columns are arranged one below the other #}
-                            {# TODO: Add responsive srcset/sizes depending on column width #}
-                            {% include "_blocks/image.twig" with {
-                                block,
-                                transform: {width: 1200},
-                                style: ['fullHeight'],
-                            } only %}
-                        {% else %}
-                            {% include "_blocks/#{block.type}.twig" with {
-                                blocks: column.blocks,
-                                block
-                            } only %}
-                        {% endif %}
+                        {% include "_blocks/#{block.type|kebab}.twig" with {
+                            blocks: column.blocks,
+                            block,
+                            layout: true,
+                            span: column.span
+                        } only %}
+
                     {% endfor %}
 
                 </div>

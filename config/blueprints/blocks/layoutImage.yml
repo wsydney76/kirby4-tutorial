@@ -1,6 +1,7 @@
 name: field.blocks.image.name
 icon: image
 wysiwyg: true
+# preview: fields causes layout overflow issue in small columns
 preview: image
 fields:
   image: fields/singleImage

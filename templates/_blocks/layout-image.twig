@@ -1,0 +1,27 @@
+{# @param block Block #}
+
+{% from '_macros/lib.twig' import img %}
+{% from '_macros/lib.twig' import copyrightOverlay %}
+
+{% set image = block.image.toFile() %}
+
+{% if image %}
+    <figure class="my-4 relative">
+
+        {# TODO: Check sizes calculation #}
+        {% set colWidth = (span/12 * 1200) %}
+
+        {{ img(image, {
+            transform: customConfig.transforms.layoutImage,
+            srcset: customConfig.srcsets.layoutImage,
+            attr: {
+                sizes: "(max-width: 1024px) 100vw, #{colWidth}px",
+                class: 'w-full'
+            }
+        }) }}
+
+        {# Show copyright on an overlay #}
+        {{ copyrightOverlay(image.copyright) }}
+
+    </figure>
+{% endif %}

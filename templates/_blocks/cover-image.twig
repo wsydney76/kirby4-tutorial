@@ -1,0 +1,18 @@
+{% from '_macros/lib.twig' import img %}
+
+{% set image = block.image.toFile() %}
+
+{% if image %}
+
+    {# TODO: Check sizes calculation, does that make sense for that type of image? #}
+    {% set colWidth = (span/12 * 1200) %}
+
+    {{ img(image, {
+        transform: customConfig.transforms.layoutImage,
+        srcset: customConfig.srcsets.layoutImage,
+        attr: {
+            sizes: "(max-width: 1024px) 100vw, #{colWidth}px",
+            class: 'object-cover object-center w-full h-full'
+        }
+    }) }}
+{% endif %}
