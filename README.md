@@ -1,6 +1,6 @@
 # Kirby 4 - Tutorial
 
-This is port of our [Craft 4 Tutorial](https://github.com/wsydney76/craft4-tutorial) for Kirby CMS.
+This is a port of our [Craft 4 Tutorial](https://github.com/wsydney76/craft4-tutorial) for Kirby CMS.
 
 More of a proof of concept/learning resource than best practice, so some rough edges for now.
 

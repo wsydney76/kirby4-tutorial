@@ -6,7 +6,7 @@
 
     {#
     Set variables for layout, so that
-        * we enable pages that are not backed by an page
+        * we enable pages that are not backed by a kirby content
         * let templates overwrite default page values
     #}
 
@@ -55,7 +55,7 @@
                 {#
                 Always code defensive!
                 Values may be missing, even if custom fields are 'required' in their field layout.
-                Think of live preview!
+                Think about previews!
                 #}
                 {% if featuredImage %}
                     {% include '_layouts/partials/featured-image.twig' with {
@@ -72,7 +72,7 @@
         <main id="content" class="{{ widthClasses[mainWidth] }} mt-8">
             {% block title %}
                 <div class="mb-8">
-                    {# Response font sizes for different screen widths #}
+                    {# Responsive font sizes for different screen widths #}
                     <h1 class="text-4xl sm:text-5xl md:text-6xl sm:leading-tight md:leading-tight">{{ title }}</h1>
                     {% if page is defined and page.subheading.isNotEmpty %}
                         <div class="mt-8 text-2xl">
@@ -89,8 +89,6 @@
             {% block content %}
                 {% if page is defined %}
                     {% if page.bodyContent.isNotEmpty %}
-
-                        {# Just pass the query, so that the include can add stuff like eager loading on its own. #}
                         {% include '_partials/blocks.twig' with {
                             blocks: collect(page.bodyContent.toBlocks())
                         } only %}
