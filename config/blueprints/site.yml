@@ -59,6 +59,7 @@ tabs:
                   de: Name der Site
               featuredImage:
                 extends: fields/featuredImage
+                query: site.images.template('image')
                 help:
                   en: The image that will be used as a fallback.
                   de: Das Bild, das als Fallback verwendet wird.

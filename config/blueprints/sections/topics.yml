@@ -4,3 +4,5 @@ label:
   de: Themen
 create: true
 query: page('topics').index
+image:
+  cover: true

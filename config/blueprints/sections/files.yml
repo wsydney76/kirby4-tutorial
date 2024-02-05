@@ -2,3 +2,6 @@ type: files
 label:
   en: Files
   de: Dateien
+template: image
+image:
+  cover: true

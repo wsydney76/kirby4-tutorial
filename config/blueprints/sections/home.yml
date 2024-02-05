@@ -4,3 +4,5 @@ label:
   de: Startseite
 create: false
 template: home
+image:
+  cover: true
