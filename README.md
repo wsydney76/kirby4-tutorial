@@ -18,7 +18,7 @@ Trying to make it easier for devs to switch between Craft and Kirby.
 
 ## Installation
 
-A user with credentials `admin@example.com`/`admin` is created during installation.
+A user with credentials `admin@example.com`/`password` is created during installation.
 
 Goto the panel at `/panel`.
 
